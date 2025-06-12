@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Breathedge Crafting Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: monospace, Arial, sans-serif;
+      background-color: #101820;
+      color: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #ffcc00;
+    }
+    input, select {
+      font-size: 16px;
+      padding: 5px;
+      margin: 5px 0;
+      width: 100%;
+    }
+    .ingredients {
+      background-color: #1a1a1a;
+      border: 1px solid #444;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+    .ingredient {
+      margin: 4px 0;
+    }
+  </style>
+</head>
+<body><center>
+<pre style="font-size: 8x; line-height: 1; color: #ffcc00;">
+██████╗ ██████╗ ███████╗ █████╗ ████████╗██╗  ██╗███████╗██████╗  ██████╗ ███████╗
+██╔══██╗██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██║  ██║██╔════╝██╔══██╗██╔════╝ ██╔════╝
+██████╔╝██████╔╝█████╗  ███████║   ██║   ███████║█████╗  ██║  ██║██║  ███╗█████╗  
+██╔══██╗██╔══██╗██╔══╝  ██╔══██║   ██║   ██╔══██║██╔══╝  ██║  ██║██║   ██║██╔══╝  
+██████╔╝██║  ██║███████╗██║  ██║   ██║   ██║  ██║███████╗██████╔╝╚██████╔╝███████╗
+╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚══════╝╚═════╝  ╚═════╝ ╚══════╝
+</pre>
+
+<h1>Crafting Tracker</h1></center>
+
+<label for="chapterFilter">Filter by Chapter:</label>
+<select id="chapterFilter">
+  <option value="all">All Chapters</option>
+  <option value="1">Chapter 1</option>
+  <option value="2">Chapter 2</option>
+  <option value="3">Chapter 3</option>
+  <option value="4">Chapter 4</option>
+  <option value="5">Chapter 5</option>
+</select>
+
+<label for="searchBox">Search Recipe:</label>
+<input type="text" id="searchBox" placeholder="Type to search...">
+
+<div id="recipeList" class="ingredients"></div>
+
+<script>
+const data = {
+  "scrapper": {
+    "name": "Scrapper",
+    "chapter": 1,
+    "ingredients": ["Refined Metal", "Battery", "Wire"]
+  },
+  "scanner": {
+    "name": "Scanner",
+    "chapter": 1,
+    "ingredients": ["Plastic", "Battery", "Glass"]
+  },
+  "enhancedSuit": {
+    "name": "Enhanced Spacesuit",
+    "chapter": 1,
+    "ingredients": ["Lead Paint x2", "Fabric", "Aluminum x2"]
+  },
+  "leadPaint": {
+    "name": "Lead Paint",
+    "chapter": 1,
+    "ingredients": ["Resin", "Paint x2"]
+  },
+  "battery": {
+    "name": "Battery",
+    "chapter": 1,
+    "ingredients": ["Alkali", "Metal", "Wire"]
+  },
+  "zapper": {
+    "name": "Zapper",
+    "chapter": 2,
+    "ingredients": ["Battery", "Wire", "Refined Metal"]
+  },
+  "empGrenade": {
+    "name": "EMP Grenade (Fernandez)",
+    "chapter": 2,
+    "ingredients": ["Battery", "Thick Electrical Tape", "Plastic", "Aluminum"]
+  },
+  "drillSuit": {
+    "name": "Drill Suit",
+    "chapter": 3,
+    "ingredients": ["Lead Paint x2", "Fabric", "Titanium", "Plastic"]
+  },
+  "neutralizer": {
+    "name": "Radiation Neutralizer",
+    "chapter": 4,
+    "ingredients": ["Electronics", "Oxygen Generator", "Titanium"]
+  },
+  "steeringWheel": {
+    "name": "Steering Wheel",
+    "chapter": 5,
+    "ingredients": ["Plastic", "Rubber", "Aluminum"]
+  }
+};
+
+function expandIngredients(key, prefix = "") {
+  if (!data[key]) return [`${prefix}${key}`];
+  let result = [];
+  data[key].ingredients.forEach(item => {
+    const clean = item.replace(/ x\d+$/, '').trim();
+    if (data[clean]) {
+      result.push(`${prefix}<b>${item}</b>`);
+      result = result.concat(expandIngredients(clean, prefix + "&nbsp;&nbsp;"));
+    } else {
+      result.push(`${prefix}${item}`);
+    }
+  });
+  return result;
+}
+
+function renderList() {
+  const search = document.getElementById("searchBox").value.toLowerCase();
+  const chapter = document.getElementById("chapterFilter").value;
+  const container = document.getElementById("recipeList");
+  container.innerHTML = "";
+
+  for (const key in data) {
+    const recipe = data[key];
+    if (
+      (chapter === "all" || recipe.chapter.toString() === chapter) &&
+      recipe.name.toLowerCase().includes(search)
+    ) {
+      const ingredients = expandIngredients(key);
+      const html = `<h2>${recipe.name}</h2>` + ingredients.map(item =>
+        `<div class="ingredient"><input type="checkbox"> <label>${item}</label></div>`
+      ).join("");
+      const box = document.createElement("div");
+      box.classList.add("ingredients");
+      box.innerHTML = html;
+      container.appendChild(box);
+    }
+  }
+}
+
+document.getElementById("searchBox").addEventListener("input", renderList);
+document.getElementById("chapterFilter").addEventListener("change", renderList);
+window.onload = renderList;
+</script>
+
+</body>
+</html>
