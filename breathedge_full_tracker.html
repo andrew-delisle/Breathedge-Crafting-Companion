@@ -34,25 +34,28 @@
   </style>
 </head>
 <body><center>
-<pre style="font-size: 8x; line-height: 1; color: #ffcc00;">
+<div style="overflow-x: auto; max-width: 100%;">
+  <pre style="font-size: clamp(10px, 2.5vw, 16px); line-height: 1; color: #ffcc00; white-space: pre-wrap; word-break: break-word;">
 ██████╗ ██████╗ ███████╗ █████╗ ████████╗██╗  ██╗███████╗██████╗  ██████╗ ███████╗
 ██╔══██╗██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██║  ██║██╔════╝██╔══██╗██╔════╝ ██╔════╝
 ██████╔╝██████╔╝█████╗  ███████║   ██║   ███████║█████╗  ██║  ██║██║  ███╗█████╗  
 ██╔══██╗██╔══██╗██╔══╝  ██╔══██║   ██║   ██╔══██║██╔══╝  ██║  ██║██║   ██║██╔══╝  
 ██████╔╝██║  ██║███████╗██║  ██║   ██║   ██║  ██║███████╗██████╔╝╚██████╔╝███████╗
 ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚══════╝╚═════╝  ╚═════╝ ╚══════╝
-</pre>
+  </pre>
+</div>
+
 
 <h1>Crafting Tracker</h1></center>
 
-<label for="chapterFilter">Filter by Chapter:</label>
-<select id="chapterFilter">
-  <option value="all">All Chapters</option>
-  <option value="1">Chapter 1</option>
-  <option value="2">Chapter 2</option>
-  <option value="3">Chapter 3</option>
-  <option value="4">Chapter 4</option>
-  <option value="5">Chapter 5</option>
+<label for="typeFilter">Filter by Type:</label>
+<select id="typeFilter">
+  <option value="all">All Types</option>
+  <option value="Food">Food</option>
+  <option value="Equipment">Equipment</option>
+  <option value="Resources">Resources</option>
+  <option value="Modules">Modules</option>
+  <option value="Vehicles">Vehicles</option>
 </select>
 
 <label for="searchBox">Search Recipe:</label>
@@ -62,57 +65,85 @@
 
 <script>
 const data = {
-  "scrapper": {
-    "name": "Scrapper",
-    "chapter": 1,
-    "ingredients": ["Refined Metal", "Battery", "Wire"]
-  },
-  "scanner": {
-    "name": "Scanner",
-    "chapter": 1,
-    "ingredients": ["Plastic", "Battery", "Glass"]
-  },
-  "enhancedSuit": {
-    "name": "Enhanced Spacesuit",
-    "chapter": 1,
-    "ingredients": ["Lead Paint x2", "Fabric", "Aluminum x2"]
-  },
-  "leadPaint": {
-    "name": "Lead Paint",
-    "chapter": 1,
-    "ingredients": ["Resin", "Paint x2"]
-  },
-  "battery": {
-    "name": "Battery",
-    "chapter": 1,
-    "ingredients": ["Alkali", "Metal", "Wire"]
-  },
-  "zapper": {
-    "name": "Zapper",
-    "chapter": 2,
-    "ingredients": ["Battery", "Wire", "Refined Metal"]
-  },
-  "empGrenade": {
-    "name": "EMP Grenade (Fernandez)",
-    "chapter": 2,
-    "ingredients": ["Battery", "Thick Electrical Tape", "Plastic", "Aluminum"]
-  },
-  "drillSuit": {
-    "name": "Drill Suit",
-    "chapter": 3,
-    "ingredients": ["Lead Paint x2", "Fabric", "Titanium", "Plastic"]
-  },
-  "neutralizer": {
-    "name": "Radiation Neutralizer",
-    "chapter": 4,
-    "ingredients": ["Electronics", "Oxygen Generator", "Titanium"]
-  },
-  "steeringWheel": {
-    "name": "Steering Wheel",
-    "chapter": 5,
-    "ingredients": ["Plastic", "Rubber", "Aluminum"]
-  }
+  // ===== FOOD =====
+  "water": { name: "Bottle of Water", type: "Food", ingredients: ["Ice x2"] },
+  "nutritionPackage": { name: "Nutrition Package", type: "Food", ingredients: ["Nutritious Goo", "Ice"] },
+  "saltyPackage": { name: "Salty Package", type: "Food", ingredients: ["Salt", "Ice"] },
+  "sweetPackage": { name: "Sweet Package", type: "Food", ingredients: ["Honey", "Ice"] },
+  "steak": { name: "Steak", type: "Food", ingredients: ["Meat"] },
+
+  // ===== EQUIPMENT =====
+  "handyScrapper": { name: "Handy Scrapper", type: "Equipment", ingredients: ["Metal x3"] },
+  "enhancedHandyScrapper": { name: "Enhanced Handy Scrapper", type: "Equipment", ingredients: ["Refined Metal x4"] },
+  "grabber": { name: "Grabber", type: "Equipment", ingredients: ["Refined Metal", "Battery", "Wire", "Aluminum"] }, 
+  "helmet": { name: "Helmet", type: "Equipment", ingredients: ["Plastic", "Glass", "Metal"] },
+  "flashlight": { name: "Flashlight", type: "Equipment", ingredients: ["Metal", "Battery", "Electronics"] },
+  "enhancedFlashlight": { name: "Enhanced Flashlight", type: "Equipment", ingredients: ["Metal", "Electronics", "Battery"] },
+  "drill": { name: "Drill", type: "Equipment", ingredients: ["Metal", "Electronics", "Wire"] },
+  "shears": { name: "Shears", type: "Equipment", ingredients: ["Metal x2", "Wire"] },
+  "scanner": { name: "Scanner", type: "Equipment", ingredients: ["Electronics", "Glass", "Wire"] },
+  "repairTool": { name: "Repair Tool", type: "Equipment", ingredients: ["Metal x2", "Wire"] },
+  "igniter": { name: "Igniter", type: "Equipment", ingredients: ["Metal", "Rubber", "Electronics"] },
+  "empGrenade": { name: "EMP Grenade", type: "Equipment", ingredients: ["Electronics", "Alkali", "Metal"] },
+  "beefPellet": { name: "Beef Pellet", type: "Equipment", ingredients: ["Beef"] },
+  "beefGrenade": { name: "Beef Grenade", type: "Equipment", ingredients: ["Beef Pellet x5", "Metal"] },
+  "blaster": { name: "Blaster", type: "Equipment", ingredients: ["Aluminum", "Electronics", "Refined Metal x2", "Lycoplasma"] },
+  "bribe": { name: "Bribe", type: "Equipment", ingredients: ["Money", "Plastic"] },
+  "chewingGum": { name: "Chewing Gum", type: "Equipment", ingredients: ["Sugar", "Plastic"] },
+  "odorNeutralizer": { name: "Dispenser", type: "Equipment", ingredients: ["Metal", "Electronics", "Plastic"] },
+  "divertingUnit": { name: "Diverting Unit", type: "Equipment", ingredients: ["Metal", "Electronics"] },
+  "doubleBalloon": { name: "Double Balloon", type: "Equipment", ingredients: ["Balloon x2", "Rubber"] },
+  "jetAccelerator": { name: "Jet Accelerator", type: "Equipment", ingredients: ["Titanium x4", "Inductor x2", "Compensator x2"] },
+  "largeAccelerator": { name: "Large Accelerator", type: "Equipment", ingredients: ["Metal x2", "Electronics", "Wire x2"] },
+  "obsoleteAccelerator": { name: "Obsolete Accelerator", type: "Equipment", ingredients: ["Metal", "Electronics"] },
+  "soilAnalyzer": { name: "Soil Analyzer", type: "Equipment", ingredients: ["Electronics", "Glass", "Wire"] },
+  "stabilizingUnit": { name: "Stabilizing Unit", type: "Equipment", ingredients: ["Metal", "Electronics", "Glass"] },
+  "voltageTransmissionUnit": { name: "Voltage Transmission Unit", type: "Equipment", ingredients: ["Metal", "Wire", "Electronics"] },
+  "magneticMasterKey": { name: "Magnetic Master Key", type: "Equipment", ingredients: ["Glass", "Electronics", "Metal"] },
+  "steeringWheel": { name: "Steering Wheel", type: "Equipment", ingredients: ["Metal", "Plastic", "Electronics"] },
+
+  // ===== RESOURCES =====
+  "refinedMetal": { name: "Refined Metal", type: "Resources", ingredients: ["Metal x4"] },
+  "battery": { name: "Battery", type: "Resources", ingredients: ["Alkali", "Metal", "Wire"] },
+  "leadPaint": { name: "Lead Paint", type: "Resources", ingredients: ["Paint x2", "Lead"] },
+  "thickElectricalTape": { name: "Thick Electrical Tape", type: "Resources", ingredients: ["Rubber x2"] },
+  "inductor": { name: "Inductor", type: "Resources", ingredients: ["Metal", "Wire"] },
+  "electronics": { name: "Electronics", type: "Resources", ingredients: ["Plastic", "Wire", "Metal"] },
+  "oxygenGenerator": { name: "Oxygen Generator", type: "Resources", ingredients: ["Titanium", "Aluminum", "Inductor"] },
+
+ // ===== MODULES =====
+  // Service Modules
+  "smallServiceModule":   { name: "Small Service Module", type: "Modules", ingredients: ["Construction Kit", "Electronics"] },
+  "mediumServiceModule":  { name: "Medium Service Module", type: "Modules", ingredients: ["Construction Kit x2", "Electronics"] },
+  "largeServiceModule":   { name: "Large Service Module", type: "Modules", ingredients: ["Construction Kit x3", "Electronics"] },
+
+  // Habitation Modules
+  "smallHabModule":       { name: "Small Habitation Module", type: "Modules", ingredients: ["Construction Kit", "Glass", "Fabric"] },
+  "mediumHabModule":      { name: "Medium Habitation Module", type: "Modules", ingredients: ["Construction Kit x2", "Glass x2", "Fabric x2"] },
+  "largeHabModule":       { name: "Large Habitation Module", type: "Modules", ingredients: ["Construction Kit x3", "Glass x3", "Fabric x3"] },
+
+  // Transport Modules
+  "smallTransportModule": { name: "Small Transport Module", type: "Modules", ingredients: ["Construction Kit", "Electronics"] },
+  "mediumTransportModule":{ name: "Medium Transport Module", type: "Modules", ingredients: ["Construction Kit x2", "Electronics"] },
+  "largeTransportModule": { name: "Large Transport Module", type: "Modules", ingredients: ["Construction Kit x3", "Resin x2"] },
+
+  // Airlocks (compartment blocks)
+  "smallAirlock":         { name: "Small Airlock", type: "Modules", ingredients: ["Aluminum", "Titanium x2"] },
+  "corridorAirlock":      { name: "Corridor Airlock", type: "Modules", ingredients: ["Aluminum", "Titanium x2"] },
+  "shuttleAirlock":       { name: "Shuttle Airlock", type: "Modules", ingredients: ["Aluminum", "Titanium x2"] }, 
+
+  // Universal station components (already in wiki / steam guides)
+  "window":               { name: "Window", type: "Modules", ingredients: ["Glass"] },
+  "corridor":             { name: "Corridor", type: "Modules", ingredients: ["Construction Kit"] },
+  "tube":                 { name: "Tube", type: "Modules", ingredients: ["Construction Kit"] },
+
+
+  // ===== VEHICLES =====
+  "vacuumCleaner": { name: "Rocket Vacuum Cleaner", type: "Vehicles", ingredients: ["Refined Metal x2", "Electronics", "Oxygen Cylinder"] },
+  "zaz1": { name: "ZAZ‑1 Space Car", type: "Vehicles", ingredients: ["Generator x2", "Breathedge Energy Core x2", "Compensator x2", "Lycoplasma x2"] }
 };
+
+
 
 function expandIngredients(key, prefix = "") {
   if (!data[key]) return [`${prefix}${key}`];
@@ -131,14 +162,14 @@ function expandIngredients(key, prefix = "") {
 
 function renderList() {
   const search = document.getElementById("searchBox").value.toLowerCase();
-  const chapter = document.getElementById("chapterFilter").value;
+  const type = document.getElementById("typeFilter").value;
   const container = document.getElementById("recipeList");
   container.innerHTML = "";
 
   for (const key in data) {
     const recipe = data[key];
     if (
-      (chapter === "all" || recipe.chapter.toString() === chapter) &&
+      (type === "all" || recipe.type.toString() === type) &&
       recipe.name.toLowerCase().includes(search)
     ) {
       const ingredients = expandIngredients(key);
@@ -154,8 +185,8 @@ function renderList() {
 }
 
 document.getElementById("searchBox").addEventListener("input", renderList);
-document.getElementById("chapterFilter").addEventListener("change", renderList);
-window.onload = renderList;
+document.getElementById("typeFilter").addEventListener("change", renderList);
+document.addEventListener("DOMContentLoaded", renderList);
 </script>
 
 </body>
