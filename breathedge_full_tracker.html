@@ -34,16 +34,52 @@
   </style>
 </head>
 <body><center>
-<div style="overflow-x: auto; max-width: 100%;">
-  <pre style="font-size: clamp(10px, 2.5vw, 16px); line-height: 1; color: #ffcc00; white-space: pre-wrap; word-break: break-word;">
+<style>
+  .logo-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .logo-scaler {
+    transform-origin: top center;
+    white-space: pre;
+    font-family: monospace;
+    color: #ffcc00;
+    display: inline-block;
+    line-height: 1;
+    text-align: left;
+  }
+
+  @media (max-width: 800px) {
+    .logo-scaler {
+      transform: scale(0.7);
+    }
+  }
+  @media (max-width: 600px) {
+    .logo-scaler {
+      transform: scale(0.55);
+    }
+  }
+  @media (max-width: 400px) {
+    .logo-scaler {
+      transform: scale(0.4);
+    }
+  }
+</style>
+
+<div class="logo-wrapper">
+  <pre class="logo-scaler">
 ██████╗ ██████╗ ███████╗ █████╗ ████████╗██╗  ██╗███████╗██████╗  ██████╗ ███████╗
 ██╔══██╗██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██║  ██║██╔════╝██╔══██╗██╔════╝ ██╔════╝
 ██████╔╝██████╔╝█████╗  ███████║   ██║   ███████║█████╗  ██║  ██║██║  ███╗█████╗  
 ██╔══██╗██╔══██╗██╔══╝  ██╔══██║   ██║   ██╔══██║██╔══╝  ██║  ██║██║   ██║██╔══╝  
 ██████╔╝██║  ██║███████╗██║  ██║   ██║   ██║  ██║███████╗██████╔╝╚██████╔╝███████╗
-╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═════╝  ╚═════╝ ╚══════╝
+╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚══════╝╚═════╝  ╚═════╝ ╚══════╝
   </pre>
 </div>
+
+
 
 
 <h1>Crafting Companion</h1></center>
@@ -179,23 +215,6 @@ const data = {
   "zaz1": { name: "ZAZ‑1 Space Car", type: "Vehicles", ingredients: ["Generator x2", "Breathedge Energy Core x2", "Compensator x2", "Lycoplasma x2"] }
 };
 
-
-
-function expandIngredients(key, prefix = "") {
-  if (!data[key]) return [`${prefix}${key}`];
-  let result = [];
-  data[key].ingredients.forEach(item => {
-    const clean = item.replace(/ x\d+$/, '').trim();
-    if (data[clean]) {
-      result.push(`${prefix}<b>${item}</b>`);
-      result = result.concat(expandIngredients(clean, prefix + "&nbsp;&nbsp;"));
-    } else {
-      result.push(`${prefix}${item}`);
-    }
-  });
-  return result;
-}
-
 function renderList() {
   const search = document.getElementById("searchBox").value.toLowerCase();
   const type = document.getElementById("typeFilter").value;
@@ -230,7 +249,7 @@ function renderList() {
 
 document.getElementById("searchBox").addEventListener("input", renderList);
 document.getElementById("typeFilter").addEventListener("change", renderList);
-document.addEventListener("DOMContentLoaded", renderList);
+renderList();
 </script>
 
 </body>
