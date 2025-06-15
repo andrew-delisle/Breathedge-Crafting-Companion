@@ -40,7 +40,7 @@ If you're not sure how to implement something, feel free to open a discussion or
 
 ## 📜 License
 
-This project is open-source under the [MIT License](LICENSE).
+This project is open-source under the [GNU License](LICENSE).
 
 ---
 
