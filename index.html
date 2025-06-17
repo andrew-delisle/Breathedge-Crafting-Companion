@@ -32,10 +32,6 @@
       margin: 4px 0;
     }
   </style>
-
-  <script data-goatcounter="https://andrew-delisle.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-  
 </head>
 <body><center>
 <style>
@@ -79,7 +75,7 @@
 ██████╔╝██████╔╝█████╗  ███████║   ██║   ███████║█████╗  ██║  ██║██║  ███╗█████╗  
 ██╔══██╗██╔══██╗██╔══╝  ██╔══██║   ██║   ██╔══██║██╔══╝  ██║  ██║██║   ██║██╔══╝  
 ██████╔╝██║  ██║███████╗██║  ██║   ██║   ██║  ██║███████╗██████╔╝╚██████╔╝███████╗
-╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚══════╝╚═════╝  ╚═════╝ ╚══════╝
+╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═════╝  ╚═════╝ ╚══════╝
   </pre>
 </div>
 
@@ -107,6 +103,8 @@
 <div id="recipeList" class="ingredients"></div>
 
 <script>
+// let selectedRecipes = new Set();
+
 const data = {
   // ===== FOOD =====
   "water": { name: "Bottle of Water", type: "Food", ingredients: ["Ice x2"] },
@@ -233,11 +231,14 @@ function renderList() {
       recipe.name.toLowerCase().includes(search)
     ) {
       try {
-        const ingredients = data[key].ingredients;
+        const expanded = expandIngredientsDisplay(key);
+        const expandedHtml = expanded.map(line => {
+          const color = getColorForLevel(line.level);
+          return `<div class="ingredient" style="color:${color}; padding-left:${line.level * 20}px">
+            <input type="checkbox"> <label>${line.text}</label></div>`;
+        }).join("");
 
-        const html = `<h2>${recipe.name}</h2>` + ingredients.map(item =>
-          `<div class="ingredient"><input type="checkbox"> <label>${item}</label></div>`
-        ).join("");
+        const html = `<h2>${recipe.name}</h2>${expandedHtml}`;
 
         const box = document.createElement("div");
         box.classList.add("ingredients");
@@ -250,6 +251,62 @@ function renderList() {
   }
 }
 
+
+
+function expandIngredientsDisplay(key, level = 0, visited = new Set()) {
+  if (!data[key] || visited.has(key)) return [];
+
+  visited.add(key);
+
+  let result = [];
+
+  data[key].ingredients.forEach(item => {
+    const match = item.match(/^(.+?)\s*x(\d+)$/i);
+    let name, qty;
+
+    if (match) {
+      name = match[1].trim();
+      qty = parseInt(match[2]);
+    } else {
+      name = item.trim();
+      qty = 1;
+    }
+
+    const subKey = getKeyByName(name);
+
+    result.push({ text: `${name}${qty > 1 ? ` x${qty}` : ''}`, level: level });
+
+    if (subKey) {
+      const subIngredients = expandIngredientsDisplay(subKey, level + 1, new Set(visited));
+      result = result.concat(subIngredients);
+    }
+  });
+
+  return result;
+}
+
+
+
+function getKeyByName(name) {
+  for (const key in data) {
+    if (data[key].name.toLowerCase() === name.toLowerCase()) {
+      return key;
+    }
+  }
+  return null;
+}
+
+
+function getColorForLevel(level) {
+  const colors = [
+    "#f2f2f2",  // base level (white-ish)
+    "#ffcc00",  // level 1
+    "#ffa500",  // level 2 (orange)
+    "#ff6666",  // level 3 (reddish)
+    "#66ccff"   // deeper levels (light blue fallback)
+  ];
+  return colors[level] || "#cccccc";
+}
 
 document.getElementById("searchBox").addEventListener("input", renderList);
 document.getElementById("typeFilter").addEventListener("change", renderList);
