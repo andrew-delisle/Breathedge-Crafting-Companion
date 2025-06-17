@@ -313,6 +313,29 @@ document.getElementById("typeFilter").addEventListener("change", renderList);
 renderList();
 </script>
 
+
+
+
+<script>
+fetch("version.json")
+  .then(res => {
+    if (!res.ok) throw new Error("Version file missing");
+    return res.json();
+  })
+  .then(data => {
+    const footer = document.getElementById("versionDisplay");
+    if (footer) {
+      footer.innerHTML = `v${data.version} &nbsp;•&nbsp; <a href="https://github.com/andrew-delisle/Breathedge-Crafting-Companion/blob/main/CHANGELOG.md" target="_blank" style="color:#ffcc00;">Changelog</a>`;
+    }
+  })
+  .catch(() => {
+    const footer = document.getElementById("versionDisplay");
+    if (footer) {
+      footer.innerHTML = `<a href="https://github.com/andrew-delisle/Breathedge-Crafting-Companion/blob/main/CHANGELOG.md" target="_blank" style="color:#ffcc00;">Changelog</a>`;
+    }
+  });
+
+</script>
 <footer style="text-align: center; margin-top: 50px;">
   <p style="color: #aaa; font-size: 14px;">
     Found a bug or have a feature idea?<br>
@@ -320,6 +343,9 @@ renderList();
       📢 Request it on GitHub
     </a>
   </p>
+  
+  <p id="versionDisplay">Loading version...</p>
+  
 </footer>
 
 </body>
