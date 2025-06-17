@@ -325,13 +325,13 @@ fetch("version.json")
   .then(data => {
     const footer = document.getElementById("versionDisplay");
     if (footer) {
-      footer.innerHTML = `v${data.version} &nbsp;•&nbsp; <a href="https://github.com/andrew-delisle/Breathedge-Crafting-Companion/blob/main/CHANGELOG.md" target="_blank" style="color:#ffcc00;">Changelog</a>`;
+      footer.innerHTML = `v${data.version} &nbsp;•&nbsp; <a href="https://github.com/andrew-delisle/Breathedge-Crafting-Companion/blob/master/CHANGELOG.md" target="_blank" style="color:#ffcc00;">Changelog</a>`;
     }
   })
   .catch(() => {
     const footer = document.getElementById("versionDisplay");
     if (footer) {
-      footer.innerHTML = `<a href="https://github.com/andrew-delisle/Breathedge-Crafting-Companion/blob/main/CHANGELOG.md" target="_blank" style="color:#ffcc00;">Changelog</a>`;
+      footer.innerHTML = `<a href="https://github.com/andrew-delisle/Breathedge-Crafting-Companion/blob/master/CHANGELOG.md" target="_blank" style="color:#ffcc00;">Changelog</a>`;
     }
   });
 
