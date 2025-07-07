@@ -252,8 +252,7 @@ function renderList() {
 }
 
 
-
-function expandIngredientsDisplay(key, level = 0, visited = new Set()) {
+function expandIngredientsDisplay(key, level = 0, visited = new Set(), multiplier = 1) {
   if (!data[key] || visited.has(key)) return [];
 
   visited.add(key);
@@ -272,12 +271,21 @@ function expandIngredientsDisplay(key, level = 0, visited = new Set()) {
       qty = 1;
     }
 
+    const totalQty = qty * multiplier;
+
+    result.push({
+      text: `${name}${totalQty > 1 ? ` x${totalQty}` : ''}`,
+      level: level
+    });
+
     const subKey = getKeyByName(name);
-
-    result.push({ text: `${name}${qty > 1 ? ` x${qty}` : ''}`, level: level });
-
     if (subKey) {
-      const subIngredients = expandIngredientsDisplay(subKey, level + 1, new Set(visited));
+      const subIngredients = expandIngredientsDisplay(
+        subKey,
+        level + 1,
+        new Set(visited),
+        totalQty
+      );
       result = result.concat(subIngredients);
     }
   });
