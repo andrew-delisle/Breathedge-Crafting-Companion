@@ -1,0 +1,146 @@
+
+	    :root {
+      --bg-color: #08141f; /* deep PDA screen background */
+      --font-color: #e8f9ff; /* crisp frosty white text */
+      --font-family: monospace, Arial, sans-serif;
+
+      --heading-color: #00f0ff; /* glowing PDA cyan */
+
+      --input-padding: 5px;
+      --input-font-size: 16px;
+      --input-width: 100%;
+
+      /* PDA panels have a soft gradient + glow */
+      --card-bg: linear-gradient(145deg, #0d2a3b 0%, #0b1f2c 100%);
+      --card-border: #00bfff; /* bright cyan glow edge */
+      --card-radius: 8px;
+      --card-padding: 12px;
+      --card-margin: 15px;
+
+      --ingredient-margin: 4px 0;
+
+      /* Bioluminescent & PDA-like colors */
+      --nest-0: #e8f9ff;
+      --nest-1: #00f0ff; /* active/clickable text */
+      --nest-2: #ffb347; /* muted amber (important items) */
+      --nest-3: #ff6666; /* alerts/warnings */
+      --nest-4: #7efeff; /* glowy ice-blue */
+      --nest-default: #b3ecff;
+         /* ✅ Version link icons */
+      --version-icon: "📝"; /* Default for dark themes */
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-color);
+      color: var(--font-color);
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: var(--heading-color);
+      text-shadow: 0 0 6px #00f0ff; /* glowing effect */
+    }
+
+    input,
+    select {
+      font-size: var(--input-font-size);
+      padding: var(--input-padding);
+      margin: 5px 0;
+      width: var(--input-width);
+
+      background-color: #0d2a3b;
+      color: var(--font-color);
+      border: 1px solid var(--card-border);
+      border-radius: 4px;
+      box-shadow: 0 0 6px #00bfff66; /* soft PDA glow */
+    }
+
+    .ingredients {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--card-radius);
+      padding: var(--card-padding);
+      margin-bottom: var(--card-margin);
+      box-shadow: 0 0 10px #00bfff44; /* PDA panel glow */
+    }
+
+    .ingredient {
+      margin: var(--ingredient-margin);
+    }
+
+    .logo-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .logo-scaler {
+      transform-origin: top center;
+      white-space: pre;
+      font-family: monospace;
+      color: var(--heading-color);
+      display: inline-block;
+      line-height: 1;
+      text-align: left;
+      text-shadow: 0 0 4px #00f0ff;
+    }
+
+    @media (max-width: 800px) {
+      .logo-scaler {
+        transform: scale(0.7);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .logo-scaler {
+        transform: scale(0.55);
+      }
+    }
+
+    @media (max-width: 400px) {
+      .logo-scaler {
+        transform: scale(0.4);
+      }
+    }
+    /* ==========================================
+       ✅ FOOTER & VERSION LINK THEME STYLING
+       ========================================== */
+
+    footer {
+      color: var(--font-color);
+      text-align: center;
+      font-size: 14px;
+      margin-top: 50px;
+    }
+
+    footer .version-text {
+      color: var(--font-color);
+      font-weight: bold;
+    }
+
+    /* ✅ Separator: now handled dynamically */
+    footer .version-separator::before {
+      content: " • ";
+      color: var(--font-color);
+    }
+
+    footer a,
+    footer .version-link {
+      color: var(--heading-color);
+      text-decoration: none;
+      position: relative;
+    }
+
+    /* ✅ Icon changes based on theme variable */
+    footer .version-link::after {
+      content: var(--version-icon);
+      margin-left: 4px;
+    }
+
+    footer a:hover,
+    footer .version-link:hover {
+      text-decoration: underline;
+    }
