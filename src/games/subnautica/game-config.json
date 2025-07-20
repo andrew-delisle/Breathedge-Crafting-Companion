@@ -1,0 +1,7 @@
+{
+  "name": "Subnautica",
+  "recipes": "recipes.json",
+  "recipeTypes": "recipe-type.json",
+  "theme": "theme.css",
+  "header": "header.html"
+}
