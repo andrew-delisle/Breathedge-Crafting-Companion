@@ -1,5 +1,8 @@
 # 📜 Changelog
 
+## v2.0.0 – 2025-07-07
+- Major refactor of script 
+
 ## v1.1.1 – 2025-07-07
 - Bug fix:
     Corrected math in nested recipes.
