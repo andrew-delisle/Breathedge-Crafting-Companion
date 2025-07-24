@@ -1,5 +1,9 @@
 # 📜 Changelog
 
+## v3.0.0 – 2025-07-20
+- Major refactor of script
+- Added support for games other than Breathedge
+
 ## v2.0.0 – 2025-07-07
 - Major refactor of script 
 
