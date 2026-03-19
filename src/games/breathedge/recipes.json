@@ -1,0 +1,273 @@
+{
+  "water": { "name": "Bottle of Water", "type": "Food", "ingredients": [ { "key": "ice", "qty": 2 } ] },
+  "nutritionPackage": { "name": "Nutrition Package", "type": "Food", "ingredients": [ { "key": "goo", "qty": 1 }, { "key": "ice", "qty": 1 } ] },
+  "saltyPackage": { "name": "Salty Package", "type": "Food", "ingredients": [ { "key": "salt", "qty": 1 }, { "key": "ice", "qty": 1 } ] },
+  "sweetPackage": { "name": "Sweet Package", "type": "Food", "ingredients": [{ "key": "honey", "qty": 1 }, { "key": "ice", "qty": 1 } ] },
+  "steak": { "name": "Steak", "type": "Food", "ingredients": [ { "key": "meat", "qty": 1 } ] },
+  
+  
+  "helmet": { "name": "Helmet", "type": "Equipment", "ingredients": [ { "key": "plastic", "qty": 1 }, { "key": "glass", "qty": 1 }, { "key": "aluminum", "qty": 1 }, { "key": "leadPaint", "qty": 1 } ] },
+  "paintedHelmet": { "name": "Helmet Covered with Paint", "type": "Equipment", "ingredients": [ { "key": "plastic", "qty": 2 }, { "key": "glass", "qty": 2 }, { "key": "aluminum", "qty": 1 }, { "key": "paint", "qty": 4 } ] },
+  "balloon": { "name": "Oxygen Balloon", "type": "Equipment", "ingredients": [ { "key": "condom", "qty": 1 }, { "key": "wire", "qty": 1 }, { "key": "plastic", "qty": 2 }, { "key": "thickElectricalTape", "qty": 1 } ] },
+  "accelerator": { "name": "Accelerator", "type": "Equipment", "ingredients": [ { "key": "schwarma", "qty": 1 }, { "key": "yellowishWater", "qty": 1 }, { "key": "refinedMetal", "qty": 1 } ] },
+  "jetAccelerator": { "name": "Jet Accelerator", "type": "Equipment", "ingredients": [ { "key": "titanium", "qty": 2 }, { "key": "inductor", "qty": 2 }, { "key": "resin", "qty": 1 }, { "key": "generator", "qty": 1 } ] },
+  "largeAccelerator": { "name": "Large Accelerator", "type": "Equipment", "ingredients": [ { "key": "refinedMetal", "qty": 2 }, { "key": "schwarma", "qty": 2 }, { "key": "yellowishWater", "qty": 2 } ] },
+  "obsoleteAccelerator": { "name": "Obsolete Accelerator", "type": "Equipment", "ingredients": [ { "key": "inductor", "qty": 1 }, { "key": "resin", "qty": 1 }, { "key": "titanium", "qty": 1 } ] },
+  "electricalEngineerSuit": { "name": "Electrical Engineer Spacesuit", "type": "Equipment", "ingredients": [ { "key": "resin", "qty": 1 }, { "key": "aluminum", "qty": 2 }, { "key": "fabricRoll", "qty": 1 } ] },
+  "engineerSuit": { "name": "Engineer Spacesuit", "type": "Equipment", "ingredients": [ { "key": "leadPaint", "qty": 1 }, { "key": "fabricRoll", "qty": 2 }, { "key": "resin", "qty": 2 }, { "key": "aluminum", "qty": 4 } ] },
+  "militarySuit": { "name": "Military Spacesuit", "type": "Equipment", "ingredients": [ { "key": "titanium", "qty": 1 }, { "key": "aluminum", "qty": 2 }, { "key": "fabricRoll", "qty": 1 }, { "key": "leadPaint", "qty": 1 } ] },
+  "oxygenCylinder": { "name": "Oxygen Cylinder", "type": "Equipment", "ingredients": [ { "key": "plastic", "qty": 2 }, { "key": "compensator", "qty": 1 }, { "key": "thickElectricalTape", "qty": 1 } ] },
+  "enhancedSuit": { "name": "Enhanced Spacesuit", "type": "Equipment", "ingredients": [ { "key": "fabricRoll", "qty": 1 }, { "key": "aluminum", "qty": 4 }, { "key": "leadPaint", "qty": 2 } ] },
+  "cedarSuit": { "name": "Cedar Spacesuit", "type": "Equipment", "ingredients": [ { "key": "aluminum", "qty": 4 }, { "key": "leadPaint", "qty": 4 }, { "key": "titanium", "qty": 2 }, { "key": "fabricRoll", "qty": 2 } ] },
+
+  "sawDrill": { "name": "Sawdrill", "type": "Tools", "ingredients": [ { "key": "battery", "qty": 1 }, { "key": "titanium", "qty": 2 }, { "key": "thickElectricalTape", "qty": 2 }, { "key": "casing", "qty": 1 } ] }, 
+  "handyScrapper": { "name": "Handy Scrapper", "type": "Tools", "ingredients": [ { "key": "metal", "qty": 3 } ] },
+  "enhancedHandyScrapper": { "name": "Enhanced Handy Scrapper", "type": "Tools", "ingredients": [ { "key": "refinedMetal", "qty": 1 }, { "key": "titanium", "qty": 1 } ] },
+  "infiniteHandyScrapper": { "name": "Infinite Handy Scrapper", "type": "Tools", "ingredients": [ { "key": "plastic", "qty": 4 }, { "key": "titanium", "qty": 4 }, { "key": "lycoplasma", "qty": 1 }, { "key": "wire", "qty": 4 } ] },
+  "scraper": { "name": "Scraper", "type": "Tools", "ingredients": [ { "key": "metal", "qty": 3 } ] },
+  "magneticMasterKey": { "name": "Magnetic Master Key", "type": "Tools", "ingredients": [ { "key": "aluminum", "qty": 2 }, { "key": "battery", "qty": 1 }, { "key": "magnet", "qty": 1 }, { "key": "thickElectricalTape", "qty": 1 } ] },
+  "flashlight": { "name": "Flashlight", "type": "Tools", "ingredients": [ { "key": "lightBulb", "qty": 1 }, { "key": "battery", "qty": 1 }, { "key": "plastic", "qty": 1 } ] },
+  "enhancedFlashlight": { "name": "Enhanced Flashlight", "type": "Tools", "ingredients": [ { "key": "plastic", "qty": 2 }, { "key": "lightBulb", "qty": 2 }, { "key": "battery", "qty": 2 } ] },
+  "drill": { "name": "Drill", "type": "Tools", "ingredients": [ { "key": "refinedMetal", "qty": 1 }, { "key": "battery", "qty": 1 }, { "key": "thickElectricalTape", "qty": 1 } ] },
+  "shears": { "name": "Shears", "type": "Tools", "ingredients": [ { "key": "metal", "qty": 3 }, { "key": "wire", "qty": 1 }, { "key": "scissors", "qty": 1 } ] },
+  "scanner": { "name": "Scanner", "type": "Tools", "ingredients": [ { "key": "battery", "qty": 1 }, { "key": "metal", "qty": 1 }, { "key": "plastic", "qty": 1 }, { "key": "lightBulb", "qty": 1 } ] },
+  "repairTool": { "name": "Repair Tool", "type": "Tools", "ingredients": [ { "key": "refinedMetal", "qty": 2 }, { "key": "aluminum", "qty": 1 }, { "key": "thickElectricalTape", "qty": 1 } ] },
+  "empGrenade": { "name": "EMP Grenade", "type": "Tools", "ingredients": [ { "key": "canOfBeef", "qty": 1 }, { "key": "battery", "qty": 1 }, { "key": "inductor", "qty": 1 } ] },
+  "beefGrenade": { "name": "Beef Grenade", "type": "Tools", "ingredients": [ { "key": "canOfBeef", "qty": 1 }, { "key": "metal", "qty": 1 }, { "key": "battery", "qty": 1 } ] },
+  "blaster": { "name": "Blaster", "type": "Tools", "ingredients": [ { "key": "aluminum", "qty": 1 }, { "key": "electronics", "qty": 1 }, { "key": "refinedMetal", "qty": 2 }, { "key": "lycoplasma", "qty": 1 } ] },
+  "bribe": { "name": "Bribe", "type": "Tools", "ingredients": [ { "key": "paint", "qty": 1 }, { "key": "rubber", "qty": 1 } ] },
+  "dispenser": { "name": "Dispenser", "type": "Tools", "ingredients": [ { "key": "battery", "qty": 1 }, { "key": "inductor", "qty": 1 }, { "key": "refinedMetal", "qty": 2 }, { "key": "thickElectricalTape", "qty": 1 } ] },
+  "soilAnalyzer": { "name": "Soil Analyzer", "type": "Tools", "ingredients": [ { "key": "electronics", "qty": 1 }, { "key": "battery", "qty": 1 }, { "key": "magnet", "qty": 2 }, { "key": "plastic", "qty": 2 } ] },
+  "grabber": { "name": "Grabber", "type": "Tools", "ingredients": [ { "key": "aluminum", "qty": 1 }, { "key": "wire", "qty": 1 }, { "key": "refinedMetal", "qty": 1 }, { "key": "battery", "qty": 1 } ] },
+  
+  "steeringWheel": { "name": "Steering Wheel", "type": "Items", "ingredients": [ { "key": "titanium", "qty": 4 }, { "key": "resin", "qty": 4 }, { "key": "electronics", "qty": 2 }, { "key": "inductor", "qty": 1 } ] },
+  "firstAidKit": { "name": "First Aid Kit", "type": "Items", "ingredients": [ { "key": "alcohol", "qty": 1 }, { "key": "fabric", "qty": 1 } ] },
+  "oxygenCandle": { "name": "Oxygen Candle", "type": "Items", "ingredients": [ { "key": "metal", "qty": 1 }, { "key": "battery", "qty": 1 } ] },
+  "largeOxygenCandle": { "name": "Large Oxygen Candle", "type": "Items", "ingredients": [ { "key": "titanium", "qty": 1 }, { "key": "battery", "qty": 1 }, { "key": "resin", "qty": 1 } ] },
+  "alcohol": { "name": "Alcohol", "type": "Items", "ingredients": [ { "key": "ice", "qty": 2 }, { "key": "alkali", "qty": 1 } ] },
+  "antiAsteroidProtection": { "name": "Anti-Asteroid Protection", "type": "Items", "ingredients": [ { "key": "microplasm", "qty": 2 }, { "key": "compensator", "qty": 1 }, { "key": "magnet", "qty": 1 }, { "key": "inductor", "qty": 1 } ] },
+  "antiGrav": { "name": "Anti-Grav", "type": "Items", "ingredients": [ { "key": "inductor", "qty": 1 }, { "key": "gravityModule", "qty": 4 }, { "key": "compensator", "qty": 1 }, { "key": "battery", "qty": 2 } ] },
+  "fuel": { "name": "Fuel", "type": "Items", "ingredients": [ { "key": "resin", "qty": 2 }, { "key": "metal", "qty": 2 } ] },
+  "igniter": { "name": "Igniter", "type": "Items", "ingredients": [ { "key": "battery", "qty": 2 }, { "key": "inductor", "qty": 1 }, { "key": "aluminum", "qty": 2 } ] },
+  "navigator": { "name": "Navigator", "type": "Items", "ingredients": [ { "key": "electronics", "qty": 2 }, { "key": "refinedMetal", "qty": 2 }, { "key": "navigationChip", "qty": 4 }, { "key": "lightBulb", "qty": 2 } ] },
+  "maneuverEngine": { "name": "Maneuver Engine", "type": "Items", "ingredients": [ { "key": "plastic", "qty": 2 }, { "key": "titanium", "qty": 1 }, { "key": "generator", "qty": 1 }, { "key": "compensator", "qty": 1 } ] },
+  "oxygenGenerator": { "name": "Oxygen Generator", "type": "Items", "ingredients": [ { "key": "battery", "qty": 1 }, { "key": "plastic", "qty": 1 }, { "key": "refinedMetal", "qty": 1 } ] },
+  "filtrationSystem": { "name": "Filtration System", "type": "Items", "ingredients": [ { "key": "filter", "qty": 4 }, { "key": "titanium", "qty": 2 }, { "key": "alkali", "qty": 2 }, { "key": "lycoplasma", "qty": 1 } ] },
+  "processorDome": { "name": "Processor Dome", "type": "Items", "ingredients": [ { "key": "lead", "qty": 4 }, { "key": "wire", "qty": 2 }, { "key": "nonConductiveGel", "qty": 2 } ] },
+  "coolingUnit": { "name": "Cooling Unit", "type": "Items", "ingredients": [ { "key": "workingFluid", "qty": 4 }, { "key": "nonConductiveGel", "qty": 2 }, { "key": "generator", "qty": 1 } ] },
+  "explosives": { "name": "Explosives", "type": "Items", "ingredients": [ { "key": "battery", "qty": 1 }, { "key": "wire", "qty": 1 }, { "key": "canOfBeef", "qty": 2 }, { "key": "electronics", "qty": 1 } ] },
+  "beefPellet": { "name": "Beef Pellet", "type": "Items", "ingredients": [ { "key": "manure", "qty": 2 } ] },
+
+  "constructionKit": { "name": "Construction Kit", "type": "Resources", "ingredients": [ { "key": "rubber", "qty": 1 }, { "key": "resin", "qty": 1 }, { "key": "titanium", "qty": 1 } ] },
+  "inductor": { "name": "Inductor", "type": "Resources", "ingredients": [ { "key": "metal", "qty": 1 }, { "key": "wire", "qty": 2 }, { "key": "plastic", "qty": 1 } ] },
+  "compensator": { "name": "Compensator", "type": "Resources", "ingredients": [ { "key": "alkali", "qty": 1 }, { "key": "refinedMetal", "qty": 2 }, { "key": "titanium", "qty": 1 } ] },
+  "generator": { "name": "Generator", "type": "Resources", "ingredients": [ { "key": "alkali", "qty": 1 }, { "key": "metal", "qty": 2 }, { "key": "electronics", "qty": 1 }, { "key": "wire", "qty": 1 } ] },
+  "fabricRoll": { "name": "Roll of fabric", "type": "Resources", "ingredients": [ { "key": "fabric", "qty": 4 } ] },
+  "kenotron": { "name": "Kenotron", "type": "Resources", "ingredients": [ { "key": "electronics", "qty": 1 }, { "key": "wire", "qty": 1 }, { "key": "glass", "qty": 2 } ] },
+  "battery": { "name": "Battery", "type": "Resources", "ingredients": [ { "key": "alkali", "qty": 1 }, { "key": "metal", "qty": 1 } ] },
+  "casing": { "name": "Casing", "type": "Resources", "ingredients": [ { "key": "aluminum", "qty": 2 }, { "key": "wire" }, { "key": "refinedMetal" } ] },
+  "thickElectricalTape": { "name": "Thick Electrical Tape", "type": "Resources", "ingredients": [	{ "key": "rubber", "qty": 2 } ] },
+  "refinedMetal": { "name": "Refined Metal", "type": "Resources", "ingredients": [ { "key": "metal", "qty": 4 } ] },
+  "leadPaint": { "name": "Lead Paint", "type": "Resources", "ingredients": [ { "key": "lead", "qty": 1 },	{ "key": "paint", "qty": 1 } ] },
+  "yellowishWater": { "name": "Yellowish Water", "type": "Resources", "ingredients": [ { "key": "ice", "qty": 4 }	] },
+  
+  
+  "suitcase": { "name": "Suitcase", "type": "Objects", "ingredients": [ { "key": "refinedMetal", "qty": 4 } ] },
+  "oxygenStation": { "name": "Oxygen Station", "type": "Objects", "ingredients": [ { "key": "oxygenCandle", "qty": 1 }, { "key": "aluminum", "qty": 1 }, { "key": "thickElectricalTape", "qty": 1 } ] },
+  "crap": { "name": "Crap Imposed by the Developers", "type": "Objects", "ingredients": [ { "key": "refinedMetal", "qty": 2 }, { "key": "thickElectricalTape", "qty": 1 }, { "key": "wire", "qty": 1 } ] },
+
+  
+  "smallServiceModule":   { "name": "Small Service Module", "type": "Modules", "ingredients": [ { "key": "constructionKit", "qty": 1 }, { "key": "electronics", "qty": 1 } ] },
+  "mediumServiceModule":  { "name": "Medium Service Module", "type": "Modules", "ingredients": [ { "key": "constructionKit", "qty": 2 }, { "key": "electronics", "qty": 1 } ] },
+  "largeServiceModule":   { "name": "Large Service Module", "type": "Modules", "ingredients": [ { "key": "constructionKit", "qty": 3 }, { "key": "electronics", "qty": 1 } ] },
+
+  
+  "smallHabModule":       { "name": "Small Habitation Module", "type": "Modules", "ingredients": [ { "key": "constructionKit", "qty": 1 }, { "key": "metal", "qty": 2 } ] },
+  "mediumHabModule":      { "name": "Medium Habitation Module", "type": "Modules", "ingredients": [ { "key": "constructionKit", "qty": 2 }, { "key": "metal", "qty": 2 } ] },
+  "largeHabModule":       { "name": "Large Habitation Module", "type": "Modules", "ingredients": [ { "key": "constructionKit", "qty": 3 }, { "key": "metal", "qty": 2 } ] },
+
+  
+  "smallTransportModule": { "name": "Small Transport Module", "type": "Modules", "ingredients": [ { "key": "constructionKit", "qty": 1 }, { "key": "resin", "qty": 2 } ] },
+  "mediumTransportModule":{ "name": "Medium Transport Module", "type": "Modules", "ingredients": [ { "key": "constructionKit", "qty": 2 }, { "key": "resin", "qty": 2 } ] },
+  "largeTransportModule": { "name": "Large Transport Module", "type": "Modules", "ingredients": [ { "key": "constructionKit", "qty": 3 }, { "key": "resin", "qty": 2 } ] },
+
+  
+  "smallAirlock":         { "name": "Small Airlock", "type": "Modules", "ingredients": [ { "key": "aluminum", "qty": 1 }, { "key": "titanium", "qty": 2 } ] },
+  "corridorAirlock":      { "name": "Corridor Airlock", "type": "Modules", "ingredients": [ { "key": "aluminum", "qty": 1 }, { "key": "titanium", "qty": 2 } ] },
+  "shuttleAirlock":       { "name": "Shuttle Airlock", "type": "Modules", "ingredients": [ { "key": "aluminum", "qty": 1 }, { "key": "titanium", "qty": 2 } ] }, 
+  "window":               { "name": "Window", "type": "Modules", "ingredients": [ { "key": "glass", "qty": 1 } ] },
+  "corridor":             { "name": "Corridor", "type": "Modules", "ingredients": [ { "key": "constructionKit", "qty": 1 } ] },
+  "tube":                 { "name": "Tube", "type": "Modules", "ingredients": [ { "key": "constructionKit", "qty": 1 } ] },
+
+
+  "vacuumCleaner": { "name": "Rocket Vacuum Cleaner", "type": "Vehicles", "ingredients": [ { "key": "refinedMetal", "qty": 2 }, { "key": "electronics", "qty": 1 }, { "key": "oxygenCylinder", "qty": 1 } ] },
+  "zaz1": { "name": "ZAZ‑1 Space Car", "type": "Vehicles", "ingredients": [ { "key": "generator", "qty": 2 }, { "key": "energyCore", "qty": 2 }, { "key": "compensator", "qty": 2 }, { "key": "lycoplasma", "qty": 2 } ] },
+
+  
+  
+  "titanium": {
+    "name": "Titanium",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+  "alkali": {
+    "name": "Alkali",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+  "metal": {
+    "name": "Metal",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "aluminum": {
+    "name": "Aluminum",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "wire": {
+    "name": "Wire",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "rubber": {
+    "name": "Rubber",
+    "type": "Raw Materials",
+    "ingredients": []
+    },
+    "ice": {
+    "name": "Ice",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "goo": {
+    "name": "Nutritious Goo",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "honey": {
+    "name": "Honey",
+    "type": "Raw Materials",
+    "ingredients": []
+    },
+    "salt": {
+    "name": "Salt",
+    "type": "Raw Materials",
+    "ingredients": []
+    },
+    "meat": {
+    "name": "Meat",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+      "plastic": {
+    "name": "Plastic",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+      "glass": {
+    "name": "Glass",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+        "lead": {
+    "name": "Lead",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "paint": {
+    "name": "Paint",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "condom": {
+    "name": "Condom",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "schwarma": {
+    "name": "Schwarma",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "resin": {
+    "name": "Resin",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "electronics": {
+    "name": "Electronics",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "fabric": {
+    "name": "Fabric",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "lycoplasma": {
+    "name": "Lycoplasma",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "magnet": {
+    "name": "Magnet",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "lightBulb": {
+    "name": "Light Bulb",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "scissors": {
+    "name": "Scissors",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "canOfBeef": {
+    "name": "Can of Beef",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "microplasm": {
+    "name": "Microplasm",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "gravityModule": {
+    "name": "Gravity Module",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "nonConductiveGel": {
+    "name": "Non-Conductive Gel",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "workingFluid": {
+    "name": "Working Fluid",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "filter": {
+    "name": "Filter",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "manure": {
+    "name": "Synthetic Manure",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+    "navigationChip": {
+    "name": "Navigation Chip",
+    "type": "Raw Materials",
+    "ingredients": []
+  },
+  "energyCore": {
+    "name": "Breathedge Energy Core",
+    "type": "Raw Materials",
+    "ingredients": []
+  }
+}

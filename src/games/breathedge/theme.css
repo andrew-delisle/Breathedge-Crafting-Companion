@@ -1,0 +1,643 @@
+/* ==========================================================
+   BREATHEDGE THEME — Retro-Futuristic HUD
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --bg:            #080e14;
+  --bg-panel:      #0b1520;
+  --bg-input:      #060c12;
+
+  --gold:          #ffcc00;
+  --gold-dim:      rgba(255, 204, 0, 0.15);
+  --gold-glow:     rgba(255, 204, 0, 0.4);
+
+  --blue:          #1e90ff;
+  --blue-dim:      rgba(30, 144, 255, 0.12);
+  --blue-glow:     rgba(30, 144, 255, 0.35);
+
+  --green:         #00e676;
+  --green-dim:     rgba(0, 230, 118, 0.1);
+  --green-border:  rgba(0, 230, 118, 0.3);
+
+  --red:           #ff4444;
+  --red-dim:       rgba(255, 68, 68, 0.12);
+
+  --text:          #c8dce8;
+  --text-dim:      #5a7a90;
+  --text-bright:   #e8f4ff;
+
+  --border:        rgba(30, 144, 255, 0.2);
+  --border-bright: rgba(30, 144, 255, 0.45);
+
+  --radius:        4px;
+  --radius-lg:     6px;
+
+  --font-display:  'Orbitron', monospace;
+  --font-mono:     'Share Tech Mono', monospace;
+
+  /* Nest level colors */
+  --nest-0:        #e8f4ff;
+  --nest-1:        #ffcc00;
+  --nest-2:        #ff9a00;
+  --nest-3:        #ff5555;
+  --nest-4:        #66ccff;
+  --nest-default:  #8899aa;
+
+  /* Scanline overlay */
+  --scanlines: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+}
+
+/* ==========================================================
+   BASE
+   ========================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-mono);
+  background-color: var(--bg);
+  background-image:
+    var(--scanlines),
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(30,144,255,0.08) 0%, transparent 60%);
+  color: var(--text);
+  margin: 0;
+  padding: 16px;
+  min-height: 100vh;
+}
+
+.page-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* ==========================================================
+   HEADER / LOGO
+   ========================================================== */
+
+.logo-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.logo-scaler {
+  transform-origin: top center;
+  white-space: pre;
+  font-family: monospace;
+  color: var(--gold);
+  display: inline-block;
+  line-height: 1;
+  text-align: left;
+  text-shadow:
+    0 0 8px var(--gold-glow),
+    0 0 15px rgba(255, 204, 0, 0.3),
+    0 0 30px rgba(255, 204, 0, 0.15);
+  animation: flicker 4s infinite alternate ease-in-out;
+}
+
+@keyframes flicker {
+  0%   { opacity: 1; }
+  40%  { opacity: 0.92; }
+  42%  { opacity: 0.78; }
+  44%  { opacity: 0.92; }
+  90%  { opacity: 1; }
+  95%  { opacity: 0.88; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 800px) { .logo-scaler { transform: scale(0.7); transform-origin: top center; } }
+@media (max-width: 600px) { .logo-scaler { transform: scale(0.52); transform-origin: top center; } }
+@media (max-width: 400px) { .logo-scaler { transform: scale(0.38); transform-origin: top center; } }
+
+/* ==========================================================
+   PAGE HEADER
+   ========================================================== */
+
+.page-header {
+  text-align: center;
+  margin: 8px 0 24px;
+  position: relative;
+}
+
+.page-header::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+  margin-top: 10px;
+  opacity: 0.6;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+/* ==========================================================
+   CONTROLS BAR
+   ========================================================== */
+
+.controls-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  padding: 14px 16px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  position: relative;
+}
+
+.controls-bar::before {
+  content: 'FILTER TERMINAL';
+  position: absolute;
+  top: -9px;
+  left: 14px;
+  font-family: var(--font-display);
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--blue);
+  background: var(--bg-panel);
+  padding: 0 8px;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.control-group label {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--blue);
+  text-transform: uppercase;
+}
+
+.search-group { flex: 1; }
+.search-group input { width: 100%; }
+
+input:not([type=checkbox]):not([type=radio]), select {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 7px 10px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius);
+  min-width: 140px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%231e90ff'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 28px;
+}
+
+input:not([type=checkbox]):not([type=radio]):focus, select:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold-glow), 0 0 8px var(--gold-glow);
+}
+
+input::placeholder { color: var(--text-dim); }
+
+/* ==========================================================
+   RECIPE CARDS — BROWSE LIST
+   ========================================================== */
+
+#recipeList { display: flex; flex-direction: column; gap: 6px; }
+
+.recipe-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.recipe-card:hover {
+  border-color: var(--border-bright);
+  box-shadow: 0 0 12px var(--blue-dim);
+}
+
+.recipe-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+}
+
+.recipe-card-title {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-bright);
+  user-select: none;
+  transition: color 0.15s;
+}
+
+.recipe-card:hover .recipe-card-title { color: var(--gold); }
+
+.recipe-card-body {
+  padding: 10px 14px 12px 14px;
+  border-top: 1px solid var(--border);
+  background: rgba(0,0,0,0.2);
+}
+
+.ingredient-tree .ingredient {
+  font-size: 12px;
+  padding: 2px 0;
+  border-left: none;
+  background: none;
+}
+
+.ingredient-tree .ingredient:hover { background: none; }
+
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
+
+.btn-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-dim);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 3px 8px;
+  line-height: 1.4;
+  transition: all 0.15s;
+  flex-shrink: 0;
+  min-width: 26px;
+  text-align: center;
+}
+
+.btn-toggle:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  box-shadow: 0 0 6px var(--blue-dim);
+}
+
+.btn-pin {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-dim);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 3px 10px;
+  transition: all 0.15s;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.btn-pin:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  box-shadow: 0 0 8px var(--gold-glow);
+}
+
+.btn-pin.is-pinned {
+  border-color: var(--gold);
+  color: var(--gold);
+  opacity: 0.55;
+  cursor: default;
+  box-shadow: none;
+}
+
+/* ==========================================================
+   PINNED RECIPE CARDS
+   ========================================================== */
+
+#pinnedRecipes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.pinned-card {
+  background: var(--bg-panel);
+  border: 1px solid rgba(255, 204, 0, 0.35);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 0 16px rgba(255, 204, 0, 0.06), inset 0 0 40px rgba(255, 204, 0, 0.02);
+  position: relative;
+}
+
+/* Gold left accent bar */
+.pinned-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--gold), rgba(255, 204, 0, 0.2));
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+
+.pinned-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px 10px 16px;
+  background: linear-gradient(90deg, rgba(255,204,0,0.06) 0%, transparent 60%);
+}
+
+.pinned-card-title {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+}
+
+.btn-toggle-pinned {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-dim);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 3px 10px;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.btn-toggle-pinned:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  box-shadow: 0 0 6px var(--blue-dim);
+}
+
+.btn-remove-pin {
+  background: transparent;
+  border: 1px solid rgba(255, 68, 68, 0.4);
+  border-radius: var(--radius);
+  color: var(--red);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 3px 10px;
+  transition: all 0.15s;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.btn-remove-pin:hover {
+  background: var(--red-dim);
+  border-color: var(--red);
+  opacity: 1;
+}
+
+.pinned-tree {
+  padding: 10px 12px 14px 16px;
+  border-top: 1px solid var(--border);
+}
+
+.pinned-ingredient {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 4px;
+  font-size: 12px;
+  border-radius: 3px;
+  transition: background 0.1s, opacity 0.2s;
+}
+
+.pinned-ingredient:hover { background: rgba(255,255,255,0.03); }
+
+.pinned-ingredient.node-disabled {
+  opacity: 0.3;
+}
+
+.pinned-ingredient label {
+  cursor: default;
+  user-select: none;
+}
+
+.node-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
+  flex-shrink: 0;
+  cursor: pointer;
+  border: 1px solid rgba(255, 204, 0, 0.5);
+  border-radius: 2px;
+  background: var(--bg-input);
+  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+  position: relative;
+}
+
+.node-checkbox:checked {
+  background: var(--gold);
+  border-color: var(--gold);
+  box-shadow: 0 0 6px var(--gold-glow);
+}
+
+.node-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 0px;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #000;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.node-checkbox:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* ==========================================================
+   MATERIALS SUMMARY — STICKY
+   ========================================================== */
+
+.materials-summary {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(135deg, #061510 0%, #091a10 100%);
+  border: 1px solid var(--green-border);
+  border-radius: var(--radius-lg);
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  box-shadow:
+    0 0 20px rgba(0, 230, 118, 0.1),
+    0 4px 24px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.materials-summary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+  opacity: 0.5;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.materials-summary.hidden { display: none; }
+
+.summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.summary-title {
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--green);
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(0, 230, 118, 0.5);
+}
+
+.btn-clear-all {
+  background: transparent;
+  border: 1px solid rgba(255, 68, 68, 0.35);
+  border-radius: var(--radius);
+  color: var(--red);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 3px 10px;
+  transition: all 0.15s;
+  opacity: 0.7;
+}
+
+.btn-clear-all:hover {
+  background: var(--red-dim);
+  border-color: var(--red);
+  opacity: 1;
+}
+
+.summary-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--green-dim);
+  border: 1px solid var(--green-border);
+  border-radius: var(--radius);
+  padding: 4px 10px;
+  font-size: 12px;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+.summary-item:hover {
+  background: rgba(0, 230, 118, 0.15);
+  box-shadow: 0 0 8px rgba(0, 230, 118, 0.15);
+}
+
+.summary-name { color: rgba(180, 255, 210, 0.9); }
+
+.summary-qty {
+  color: var(--green);
+  font-weight: bold;
+  font-family: var(--font-display);
+  font-size: 10px;
+}
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+footer a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.15s, text-shadow 0.15s;
+}
+
+footer a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px var(--gold-glow);
+}
+
+footer .version-text { color: var(--text-dim); }
+footer .version-separator::before { content: " · "; }
+footer .version-link { color: var(--gold); text-decoration: none; }
+footer .version-link::after { content: var(--version-icon, ''); margin-left: 4px; }
+footer .version-link:hover { text-decoration: underline; }
+
+/* ==========================================================
+   LEGACY .ingredients (used by fallback/no-game state)
+   ========================================================== */
+
+.ingredients {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+/* ==========================================================
+   SCROLLBAR
+   ========================================================== */
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--blue); }
+

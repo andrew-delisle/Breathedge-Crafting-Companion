@@ -1,0 +1,1056 @@
+{
+  "titaniumIngot": {
+    "name": "Titanium Ingot",
+    "type": "Basic Materials",
+    "ingredients": [
+      { "key": "titanium", "qty": 10 }
+    ]
+  },
+  "glass": {
+    "name": "Glass",
+    "type": "Basic Materials",
+    "ingredients": [
+      { "key": "quartz", "qty": 2 }
+    ]
+  },
+    "enameledGlass": {
+    "name": "Enameled Glass",
+    "type": "Basic Materials",
+    "ingredients": [
+      { "key": "glass", "qty": 1 },
+		  { "key": "stalkerTooth", "qty": 1}
+    ]
+  },
+  "fiberMesh": {
+    "name": "Fiber Mesh",
+    "type": "Basic Materials",
+    "ingredients": [
+      { "key": "creepvineSample", "qty": 2 }
+    ]
+  },
+  "siliconeRubber": {
+    "name": "Silicone Rubber",
+    "type": "Basic Materials",
+    "ingredients": [
+      { "key": "creepvineSeedCluster", "qty": 2 }
+    ]
+  },
+  "bleach": {
+    "name": "Bleach",
+    "type": "Basic Materials",
+    "ingredients": [
+      { "key": "saltDeposit", "qty": 1 },
+      { "key": "coralTubeSample", "qty": 1 }
+    ]
+  },
+  "lubricant": {
+    "name": "Lubricant",
+    "type": "Basic Materials",
+    "ingredients": [
+      { "key": "creepvineSeedCluster", "qty": 1 }
+    ]
+  },
+  "enameledGlass": {
+    "name": "Enameled Glass",
+    "type": "Basic Materials",
+    "ingredients": [
+      { "key": "stalkerTooth", "qty": 1 },
+      { "key": "glass", "qty": 1 }
+    ]
+  },
+  "plasteelIngot": {
+    "name": "Plasteel Ingot",
+    "type": "Basic Materials",
+    "ingredients": [
+      { "key": "titaniumIngot", "qty": 1 },
+      { "key": "lithium", "qty": 2 }
+    ]
+  },
+
+  "benzene": {
+    "name": "Benzene",
+    "type": "Advanced Materials",
+    "ingredients": [
+      { "key": "bloodOil", "qty": 3 }
+    ]
+  },
+  "syntheticFibers": {
+    "name": "Synthetic Fibers",
+    "type": "Advanced Materials",
+    "ingredients": [
+      { "key": "benzene", "qty": 1 },
+      { "key": "fiberMesh", "qty": 1 }
+    ]
+  },
+  "hydrochloricAcid": {
+    "name": "Hydrochloric Acid",
+    "type": "Advanced Materials",
+    "ingredients": [
+      { "key": "saltDeposit", "qty": 1 },
+      { "key": "deepShroom", "qty": 3 }
+    ]
+  },
+  "aerogel": {
+    "name": "Aerogel",
+    "type": "Advanced Materials",
+    "ingredients": [
+      { "key": "gelSack", "qty": 1 },
+      { "key": "ruby", "qty": 1 }
+    ]
+  },
+  "polyaniline": {
+    "name": "Polyaniline",
+    "type": "Advanced Materials",
+    "ingredients": [
+      { "key": "hydrochloricAcid", "qty": 1 },
+      { "key": "gold", "qty": 1 }
+    ]
+  },
+    "hatchingEnzymes": {
+    "name": "Hatching Enzymes",
+    "type": "Advanced Materials",
+    "ingredients": [
+      { "key": "eyeStalkSeed", "qty": 1 },
+      { "key": "seaCrownSeed", "qty": 1 },
+	  { "key": "fungalSample", "qty": 1 },
+	  { "key": "ghostWeedSeed", "qty": 1 },
+	  { "key": "bulbBushSample", "qty": 1 }
+    ]
+  },
+
+
+  "copperWire": {
+    "name": "Copper Wire",
+    "type": "Electronics",
+    "ingredients": [
+      { "key": "copperOre", "qty": 2 }
+    ]
+  },
+  "battery": {
+    "name": "Battery",
+    "type": "Electronics",
+    "ingredients": [
+      { "key": "acidMushroom", "qty": 2 },
+      { "key": "copperOre", "qty": 1 }
+    ]
+  },
+  "powerCell": {
+    "name": "Power Cell",
+    "type": "Electronics",
+    "ingredients": [
+      { "key": "battery", "qty": 2 },
+      { "key": "siliconeRubber", "qty": 1 }
+    ]
+  },
+  "wiringKit": {
+    "name": "Wiring Kit",
+    "type": "Electronics",
+    "ingredients": [
+      { "key": "silverOre", "qty": 2 }
+    ]
+  },
+  "advancedWiringKit": {
+    "name": "Advanced Wiring Kit",
+    "type": "Electronics",
+    "ingredients": [
+      { "key": "wiringKit", "qty": 1 },
+      { "key": "gold", "qty": 2 },
+      { "key": "computerChip", "qty": 1 }
+    ]
+  },
+  "computerChip": {
+    "name": "Computer Chip",
+    "type": "Electronics",
+    "ingredients": [
+      { "key": "tableCoralSample", "qty": 2 },
+      { "key": "gold", "qty": 1 },
+      { "key": "copperWire", "qty": 1 }
+    ]
+  },
+  "reactorRod": {
+    "name": "Reactor Rod",
+    "type": "Electronics",
+    "ingredients": [
+      { "key": "uraniniteCrystal", "qty": 3 },
+      { "key": "lead", "qty": 1 },
+      { "key": "titanium", "qty": 1 },
+	  { "key": "glass", "qty": 1 }
+    ]
+  },
+  "ionBattery": {
+    "name": "Ion Battery",
+    "type": "Electronics",
+    "ingredients": [
+      { "key": "ionCube", "qty": 1 },
+      { "key": "gold", "qty": 1 },
+      { "key": "silverOre", "qty": 1 }
+    ]
+  },
+  "ionPowerCell": {
+    "name": "Ion Power Cell",
+    "type": "Electronics",
+    "ingredients": [
+      { "key": "ionBattery", "qty": 2 },
+      { "key": "siliconeRubber", "qty": 1 }
+    ]
+  }
+,
+  "filteredWater": {
+    "name": "Filtered Water",
+    "type": "Water",
+    "ingredients": [
+      { "key": "bladderfish", "qty": 1 }
+    ]
+  },
+    "disinfectedWater": {
+    "name": "Disinfected Water",
+    "type": "Water",
+    "ingredients": [
+      { "key": "bleach", "qty": 1 }
+    ]
+  },
+  "fins": {
+    "name": "Fins",
+    "type": "Equipment",
+    "ingredients": [
+      { "key": "siliconeRubber", "qty": 2 }
+    ]
+  },
+  "standardO2Tank": {
+    "name": "Standard O2 Tank",
+    "type": "Equipment",
+    "ingredients": [
+      { "key": "titanium", "qty": 3 }
+    ]
+  },
+  "highCapacityO2Tank": {
+    "name": "High Capacity O2 Tank",
+    "type": "Equipment",
+    "ingredients": [
+      { "key": "standardO2Tank", "qty": 1 },
+      { "key": "glass", "qty": 2 },
+      { "key": "titanium", "qty": 4 },
+      { "key": "silverOre", "qty": 1 }
+    ]
+  },
+  "radiationSuit": {
+    "name": "Radiation Suit",
+    "type": "Equipment",
+    "ingredients": [
+      { "key": "fiberMesh", "qty": 2 },
+      { "key": "lead", "qty": 2 }
+    ]
+  },
+  "reinforcedDiveSuit": {
+    "name": "Reinforced Dive Suit",
+    "type": "Equipment",
+    "ingredients": [
+      { "key": "syntheticFibers", "qty": 1 },
+      { "key": "diamond", "qty": 2 },
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "stillsuit": {
+    "name": "Stillsuit",
+    "type": "Equipment",
+    "ingredients": [
+      { "key": "fiberMesh", "qty": 2 },
+      { "key": "copperWire", "qty": 1 },
+      { "key": "silverOre", "qty": 1 }
+    ]
+  },
+  "compass": {
+    "name": "Compass",
+    "type": "Equipment",
+    "ingredients": [
+      { "key": "copperWire", "qty": 1 },
+      { "key": "wiringKit", "qty": 1 }
+    ]
+  },
+  "pipe": {
+    "name": "Pipe",
+    "type": "Equipment",
+    "ingredients": [
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "floatingAirPump": {
+    "name": "Floating Air Pump",
+    "type": "Equipment",
+    "ingredients": [
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "rebreather": {
+    "name": "Rebreather",
+    "type": "Equipment",
+    "ingredients": [
+      { "key": "wiringKit", "qty": 1 },
+	  { "key": "fiberMesh", "qty": 1 }
+    ]
+  },
+  "firstAid": {
+    "name": "First Aid Kit",
+    "type": "Equipment",
+    "ingredients": [
+	  { "key": "fiberMesh", "qty": 1 }
+    ]
+  },
+    "fireExtinguisher": {
+    "name": "Fire Extinguisher",
+    "type": "Equipment",
+    "ingredients": [
+	  { "key": "titanium", "qty": 3 }
+    ]
+  },
+      "purpleTablet": {
+    "name": "Purple Tablet",
+    "type": "Equipment",
+    "ingredients": [
+	  { "key": "ionCube", "qty": 1 },
+	  { "key": "diamond", "qty": 2 }
+    ]
+  },
+      "blueTablet": {
+    "name": "Blue Tablet",
+    "type": "Equipment",
+    "ingredients": [
+	  { "key": "ionCube", "qty": 1 },
+	  { "key": "kyanite", "qty": 2 }
+    ]
+  },
+      "orangeTablet": {
+    "name": "Orange Tablet",
+    "type": "Equipment",
+    "ingredients": [
+	  { "key": "ionCube", "qty": 1 },
+	  { "key": "nickelOre", "qty": 2 }
+    ]
+  },
+  "survivalKnife": {
+    "name": "Survival Knife",
+    "type": "Tools",
+    "ingredients": [
+      { "key": "titanium", "qty": 1 },
+      { "key": "siliconeRubber", "qty": 1 }
+    ]
+  },
+  "thermoblade": {
+    "name": "Thermoblade",
+    "type": "Tools",
+    "ingredients": [
+      { "key": "survivalKnife", "qty": 1 },
+      { "key": "battery", "qty": 1 }
+    ]
+  },
+  "scanner": {
+    "name": "Scanner",
+    "type": "Tools",
+    "ingredients": [
+      { "key": "battery", "qty": 1 },
+      { "key": "titanium", "qty": 1 }
+    ]
+  },
+  "flashlight": {
+    "name": "Flashlight",
+    "type": "Tools",
+    "ingredients": [
+      { "key": "battery", "qty": 1 },
+      { "key": "glass", "qty": 1 }
+    ]
+  },
+  "repairTool": {
+    "name": "Repair Tool",
+    "type": "Tools",
+    "ingredients": [
+      { "key": "siliconeRubber", "qty": 1 },
+      { "key": "titanium", "qty": 1 },
+      { "key": "caveSulfur", "qty": 1 }
+    ]
+  },
+  "laserCutter": {
+    "name": "Laser Cutter",
+    "type": "Tools",
+    "ingredients": [
+      { "key": "battery", "qty": 1 },
+      { "key": "diamond", "qty": 2 },
+      { "key": "titanium", "qty": 1 },
+	  { "key": "caveSulfur", "qty": 1 }
+    ]
+  },
+  "stasisRifle": {
+    "name": "Stasis Rifle",
+    "type": "Tools",
+    "ingredients": [
+      { "key": "battery", "qty": 1 },
+      { "key": "computerChip", "qty": 1 },
+      { "key": "titanium", "qty": 1 },
+	  { "key": "magnetite", "qty": 2 }
+    ]
+  },
+  "propulsionCannon": {
+    "name": "Propulsion Cannon",
+    "type": "Tools",
+    "ingredients": [
+      { "key": "battery", "qty": 1 },
+      { "key": "wiringKit", "qty": 1 },
+      { "key": "titanium", "qty": 1 }
+    ]
+  },
+  "repulsionCannon": {
+    "name": "Repulsion Cannon",
+    "type": "Tools",
+    "ingredients": [
+      { "key": "propulsionCannon", "qty": 1 },
+      { "key": "computerChip", "qty": 1 }
+    ]
+  },
+  "habitatBuilder": {
+    "name": "Habitat Builder",
+    "type": "Tools",
+    "ingredients": [
+      { "key": "computerChip", "qty": 1 },
+      { "key": "battery", "qty": 1 },
+      { "key": "wiringKit", "qty": 1 }
+    ]
+  },
+    "pathfinderTool": {
+    "name": "Pathfinder Tool",
+    "type": "Tools",
+    "ingredients": [
+      { "key": "titanium", "qty": 1 },
+      { "key": "copperWire", "qty": 1 },
+      { "key": "creepvineSeedCluster", "qty": 2 }
+    ]
+  },
+    "flare": {
+    "name": "Flare",
+    "type": "Tools",
+    "ingredients": [
+      { "key": "caveSulfur", "qty": 1 }
+    ]
+  },
+   "airBladder": {
+    "name": "Air Bladder",
+    "type": "Tools",
+    "ingredients": [
+      { "key": "bladderfish", "qty": 1 },
+      { "key": "siliconeRubber", "qty": 1 }
+    ]
+  },
+   "lightStick": {
+    "name": "Light Stick",
+    "type": "Tools",
+    "ingredients": [
+      { "key": "titanium", "qty": 1 },
+      { "key": "battery", "qty": 1 },
+      { "key": "glass", "qty": 1 }
+    ]
+  },
+  "seaglide": {
+    "name": "Seaglide",
+    "type": "Deployables",
+    "ingredients": [
+      { "key": "battery", "qty": 1 },
+      { "key": "lubricant", "qty": 1 },
+      { "key": "copperWire", "qty": 1 },
+      { "key": "titanium", "qty": 1 }
+    ]
+  },
+
+  "waterproofLocker": {
+    "name": "Waterproof Locker",
+    "type": "Deployables",
+    "ingredients": [
+      { "key": "titanium", "qty": 4 }
+    ]
+  },
+  "beacon": {
+    "name": "Beacon",
+    "type": "Deployables",
+    "ingredients": [
+      { "key": "copperOre", "qty": 1 },
+      { "key": "titanium", "qty": 1 }
+    ]
+  },
+  "gravTrap": {
+    "name": "Grav Trap",
+    "type": "Deployables",
+    "ingredients": [
+      { "key": "titanium", "qty": 1 },
+      { "key": "copperWire", "qty": 1 },
+      { "key": "battery", "qty": 1 }
+    ]
+  },
+  "creatureDecoy": {
+    "name": "Creature Decoy",
+    "type": "Deployables",
+    "ingredients": [
+	  { "key": "wiringKit", "qty": 1 },
+      { "key": "titanium", "qty": 3 }
+    ]
+  },
+  "mobileVehicleBay": {
+    "name": "Mobile Vehicle Bay",
+    "type": "Deployables",
+    "ingredients": [
+      { "key": "titaniumIngot", "qty": 1 },
+      { "key": "lubricant", "qty": 1 },
+      { "key": "powerCell", "qty": 1 }
+    ]
+  },
+
+  "seamoth": {
+    "name": "Seamoth",
+    "type": "Vehicles",
+    "ingredients": [
+      { "key": "titaniumIngot", "qty": 1 },
+      { "key": "powerCell", "qty": 1 },
+      { "key": "glass", "qty": 2 },
+      { "key": "lubricant", "qty": 1 },
+      { "key": "lead", "qty": 1 }
+    ]
+  },
+  "prawnSuit": {
+    "name": "Prawn Suit",
+    "type": "Vehicles",
+    "ingredients": [
+      { "key": "plasteelIngot", "qty": 2 },
+      { "key": "aerogel", "qty": 2 },
+      { "key": "enameledGlass", "qty": 1 },
+      { "key": "diamond", "qty": 2 },
+      { "key": "lead", "qty": 2 }
+    ]
+  },
+    "neptuneLaunchPlatform": {
+    "name": "Neptune Launch Platform",
+    "type": "Vehicles",
+    "ingredients": [
+      { "key": "titaniumIngot", "qty": 2 },
+      { "key": "computerChip", "qty": 1 },
+      { "key": "lead", "qty": 4 }
+    ]
+  },
+  
+  "cyclops": {
+    "name": "Cyclops",
+    "type": "Vehicles",
+    "ingredients": [
+      { "key": "plasteelIngot", "qty": 3 },
+      { "key": "enameledGlass", "qty": 3 },
+      { "key": "lubricant", "qty": 1 },
+      { "key": "lead", "qty": 3 },
+      { "key": "advancedWiringKit", "qty": 1 }
+    ]
+  }
+,
+
+
+"seamothDepthModuleMK1": { "name": "Seamoth Depth Module MK1", "type": "Vehicle Modules", "ingredients": [
+    { "key": "titaniumIngot", "qty": 1 }
+  ] },
+  "seamothDepthModuleMK2": { "name": "Seamoth Depth Module MK2", "type": "Vehicle Modules", "ingredients": [
+    { "key": "seamothDepthModuleMK1", "qty": 1 },
+    { "key": "plasteelIngot", "qty": 1 },
+    { "key": "magnetite", "qty": 2 },
+    { "key": "enameledGlass", "qty": 1 }
+  ] },
+  "seamothDepthModuleMK3": { "name": "Seamoth Depth Module MK3", "type": "Vehicle Modules", "ingredients": [
+    { "key": "seamothDepthModuleMK2", "qty": 1 },
+    { "key": "plasteelIngot", "qty": 1 },
+    { "key": "aluminumOxideCrystal", "qty": 2 }
+  ] },
+  "seamothPerimeterDefenseSystem": { "name": "Seamoth Perimeter Defense System", "type": "Vehicle Modules", "ingredients": [
+    { "key": "polyaniline", "qty": 1 },
+    { "key": "wiringKit", "qty": 1 }
+  ] },
+  "seamothSolarCharger": { "name": "Seamoth Solar Charger", "type": "Vehicle Modules", "ingredients": [
+    { "key": "advancedWiringKit", "qty": 1 },
+    { "key": "enameledGlass", "qty": 1 }
+  ] },
+  "seamothSonar": { "name": "Seamoth Sonar", "type": "Vehicle Modules", "ingredients": [
+    { "key": "computerChip", "qty": 1 },
+    { "key": "magnetite", "qty": 2 }
+  ] },
+  "seamothTorpedoSystem": { "name": "Seamoth Torpedo System", "type": "Vehicle Modules", "ingredients": [
+    { "key": "titanium", "qty": 1 },
+    { "key": "wiringKit", "qty": 1 }
+  ] },
+  "prawnDepthModuleMK1": { "name": "Prawn Suit Depth Module MK1", "type": "Vehicle Modules", "ingredients": [
+    { "key": "plasteelIngot", "qty": 1 }
+  ] },
+  "prawnDepthModuleMK2": { "name": "Prawn Suit Depth Module MK2", "type": "Vehicle Modules", "ingredients": [
+    { "key": "prawnDepthModuleMK1", "qty": 1 },
+    { "key": "titanium", "qty": 5 },
+    { "key": "lithium", "qty": 2 },
+	{ "key": "kyanite", "qty": 3 }
+  ] },
+  "prawnDrillArm": { "name": "Prawn Suit Drill Arm", "type": "Vehicle Modules", "ingredients": [
+    { "key": "titanium", "qty": 5 },
+    { "key": "lithium", "qty": 1 },
+    { "key": "diamond", "qty": 4 }
+  ] },
+  "prawnGrapplingArm": { "name": "Prawn Suit Grappling Arm", "type": "Vehicle Modules", "ingredients": [
+    { "key": "titanium", "qty": 5 },
+    { "key": "advancedWiringKit", "qty": 1 },
+    { "key": "benzene", "qty": 1 }
+  ] },
+  "prawnJumpJet": { "name": "Prawn Suit Jump Jet Upgrade", "type": "Vehicle Modules", "ingredients": [
+    { "key": "nickelOre", "qty": 2 },
+    { "key": "crystallineSulfur", "qty": 3 },
+    { "key": "plasteelIngot", "qty": 1 }
+  ] },
+  "prawnPropulsionCannon": { "name": "Prawn Suit Propulsion Cannon", "type": "Vehicle Modules", "ingredients": [
+    { "key": "propulsionCannon", "qty": 1 },
+    { "key": "titanium", "qty": 5 },
+    { "key": "computerChip", "qty": 1 }
+  ] },
+  "prawnThermalReactor": { "name": "Prawn Suit Thermal Reactor", "type": "Vehicle Modules", "ingredients": [
+    { "key": "polyaniline", "qty": 2 },
+    { "key": "kyanite", "qty": 2 },
+    { "key": "wiringKit", "qty": 1 }
+  ] },
+  "prawnTorpedoArm": { "name": "Prawn Suit Torpedo Arm", "type": "Vehicle Modules", "ingredients": [
+    { "key": "titanium", "qty": 5 },
+    { "key": "wiringKit", "qty": 1 }
+  ] },
+  "cyclopsDepthModuleMK1": { "name": "Cyclops Depth Module MK1", "type": "Vehicle Modules", "ingredients": [
+    { "key": "plasteelIngot", "qty": 1 },
+    { "key": "ruby", "qty": 3 }
+  ] },
+  "cyclopsDepthModuleMK2": { "name": "Cyclops Depth Module MK2", "type": "Vehicle Modules", "ingredients": [
+    { "key": "cyclopsDepthModuleMK1", "qty": 1 },
+    { "key": "plasteelIngot", "qty": 1 },
+    { "key": "nickelOre", "qty": 3 }
+  ] },
+  "cyclopsDepthModuleMK3": { "name": "Cyclops Depth Module MK3", "type": "Vehicle Modules", "ingredients": [
+    { "key": "cyclopsDepthModuleMK2", "qty": 1 },
+    { "key": "plasteelIngot", "qty": 1 },
+    { "key": "kyanite", "qty": 3 }
+  ] },
+  "cyclopsEngineEfficiencyModule": { "name": "Cyclops Engine Efficiency Module", "type": "Vehicle Modules", "ingredients": [
+    { "key": "computerChip", "qty": 1 },
+	{ "key": "benzene", "qty": 1 },
+    { "key": "polyaniline", "qty": 1 }
+	
+  ] },
+  "cyclopsThermalReactorModule": { "name": "Cyclops Thermal Reactor Module", "type": "Vehicle Modules", "ingredients": [
+    { "key": "polyaniline", "qty": 2 },
+    { "key": "kyanite", "qty": 2 },
+    { "key": "wiringKit", "qty": 1 }
+  ] },
+  "cyclopsSonarModule": { "name": "Cyclops Sonar Module", "type": "Vehicle Modules", "ingredients": [
+    { "key": "computerChip", "qty": 1 },
+    { "key": "magnetite", "qty": 3 }
+  ] },
+  "cyclopsFireSuppressionModule": { "name": "Cyclops Fire Suppression System", "type": "Vehicle Modules", "ingredients": [
+    { "key": "aerogel", "qty": 2 },
+    { "key": "crystallineSulfur", "qty": 1 }
+  ] },
+  "cyclopsDockingBayRepairModule": { "name": "Cyclops Docking Bay Repair Module", "type": "Vehicle Modules", "ingredients": [
+    { "key": "repairTool", "qty": 1 },
+    { "key": "copperWire", "qty": 1 }
+  ] },
+  "cyclopsDecoyTubeUpgrade": { "name": "Cyclops Decoy Tube Upgrade", "type": "Vehicle Modules", "ingredients": [
+    { "key": "titanium", "qty": 3 },
+    { "key": "aerogel", "qty": 1 },
+	{ "key": "lithium", "qty": 2 }
+  ] },
+  "cyclopsShieldGeneratorModule": { "name": "Cyclops Shield Generator Module", "type": "Vehicle Modules", "ingredients": [
+    { "key": "advancedWiringKit", "qty": 1 },
+    { "key": "polyaniline", "qty": 1 },
+    { "key": "powerCell", "qty": 1 }
+  ] },
+
+  "foundation": {
+    "name": "Foundation",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "titanium", "qty": 2 },
+      { "key": "lead", "qty": 2 }
+    ]
+  },
+  "compartment": {
+    "name": "Compartment",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "compartmentI": {
+    "name": "Compartment (I-Piece)",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "compartmentL": {
+    "name": "Compartment (L-Piece)",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "compartmentT": {
+    "name": "Compartment (T-Piece)",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "compartmentX": {
+    "name": "Compartment (X-Piece)",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "compartmentGlass": {
+    "name": "Glass Compartment",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "glass", "qty": 2 },
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "verticalConnector": {
+    "name": "Vertical Connector",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "hatch": {
+    "name": "Hatch",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "quartz", "qty": 1 },
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "reinforcement": {
+    "name": "Reinforcement",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "titanium", "qty": 3 },
+      { "key": "lithium", "qty": 1 }
+    ]
+  },
+  "window": {
+    "name": "Window",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "glass", "qty": 1 }
+    ]
+  },
+  "observatory": {
+    "name": "Observatory",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "enameledGlass", "qty": 2 },
+      { "key": "titanium", "qty": 1 }
+    ]
+  },
+  "multipurposeRoom": {
+    "name": "Multipurpose Room",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "titanium", "qty": 6 }
+    ]
+  },
+  "scannerRoom": {
+    "name": "Scanner Room",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "titanium", "qty": 5 },
+      { "key": "copperOre", "qty": 2 },
+      { "key": "tableCoralSample", "qty": 1 },
+      { "key": "quartz", "qty": 1 }
+    ]
+  },
+  "moonpool": {
+    "name": "Moonpool",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "titaniumIngot", "qty": 2 },
+      { "key": "lubricant", "qty": 1 },
+      { "key": "lead", "qty": 2 }
+    ]
+  },
+  "powerTransmitter": {
+    "name": "Power Transmitter",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "gold", "qty": 1 },
+      { "key": "titanium", "qty": 1 }
+    ]
+  },
+  "solarPanel": {
+    "name": "Solar Panel",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "quartz", "qty": 2 },
+      { "key": "titanium", "qty": 2 },
+      { "key": "copperOre", "qty": 1 }
+    ]
+  },
+  "thermalPlant": {
+    "name": "Thermal Plant",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "titanium", "qty": 5 },
+      { "key": "aerogel", "qty": 2 },
+      { "key": "magnetite", "qty": 2 }
+    ]
+  },
+  "bioreactor": {
+    "name": "Bioreactor",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "titanium", "qty": 3 },
+      { "key": "wiringKit", "qty": 1 },
+      { "key": "lubricant", "qty": 1 }
+    ]
+  },
+  "nuclearReactor": {
+    "name": "Nuclear Reactor",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "plasteelIngot", "qty": 1 },
+      { "key": "advancedWiringKit", "qty": 1 },
+      { "key": "uraniniteCrystal", "qty": 3 },
+      { "key": "lead", "qty": 2 }
+    ]
+  },
+  "waterFiltrationMachine": {
+    "name": "Water Filtration Machine",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "titanium", "qty": 3 },
+      { "key": "copperWire", "qty": 1 },
+      { "key": "aerogel", "qty": 1 }
+    ]
+  },
+  "aquarium": {
+    "name": "Aquarium",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "glass", "qty": 2 },
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "alienContainment": {
+    "name": "Alien Containment",
+    "type": "Base Pieces",
+    "ingredients": [
+      { "key": "glass", "qty": 5 },
+      { "key": "titanium", "qty": 2 }
+    ]
+  }, 
+   "fabricator": { "name": "Fabricator", "type": "Base Pieces", "ingredients": [
+    { "key": "titanium", "qty": 1 },
+    { "key": "tableCoralSample", "qty": 1 },
+    { "key": "gold", "qty": 1 }
+  ] },
+  "radio": { "name": "Radio", "type": "Base Pieces", "ingredients": [
+    { "key": "titanium", "qty": 1 },
+    { "key": "copperOre", "qty": 1 }
+  ] },
+  "medicalKitFabricator": { "name": "Medical Kit Fabricator", "type": "Base Pieces", "ingredients": [
+    { "key": "fiberMesh", "qty": 1 },
+    { "key": "computerChip", "qty": 1 },
+    { "key": "silverOre", "qty": 1 }
+  ] },
+  "wallLocker": { "name": "Wall Locker", "type": "Base Pieces", "ingredients": [
+    { "key": "titanium", "qty": 2 }
+  ] },
+  "locker": { "name": "Locker", "type": "Base Pieces", "ingredients": [
+    { "key": "titanium", "qty": 4 }
+  ] },
+  "modificationStation": { "name": "Modification Station", "type": "Base Pieces", "ingredients": [
+    { "key": "titanium", "qty": 1 },
+    { "key": "computerChip", "qty": 1 },
+    { "key": "diamond", "qty": 1 }
+  ] },
+  "vehicleUpgradeConsole": { "name": "Vehicle Upgrade Console", "type": "Base Pieces", "ingredients": [
+    { "key": "titanium", "qty": 3 },
+    { "key": "computerChip", "qty": 1 },
+    { "key": "copperWire", "qty": 1 }
+  ] },
+  "batteryCharger": { "name": "Battery Charger", "type": "Base Pieces", "ingredients": [
+    { "key": "wiringKit", "qty": 1 },
+    { "key": "copperWire", "qty": 1 },
+    { "key": "titanium", "qty": 1 }
+  ] },
+  "powerCellCharger": { "name": "Power Cell Charger", "type": "Base Pieces", "ingredients": [
+    { "key": "advancedWiringKit", "qty": 1 },
+    { "key": "siliconeRubber", "qty": 2 },
+    { "key": "titanium", "qty": 2 }
+  ] },
+  "bench": {
+    "name": "Bench",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "chair": {
+    "name": "Chair",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "titanium", "qty": 1 }
+    ]
+  },
+  "swivelChair": {
+    "name": "Swivel Chair",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "titanium", "qty": 1 }
+    ]
+  },
+  "desk": {
+    "name": "Desk",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "singleBed": {
+    "name": "Single Bed",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "fiberMesh", "qty": 1 },
+      { "key": "titanium", "qty": 1 }
+    ]
+  },
+  "doubleBed": {
+    "name": "Double Bed",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "fiberMesh", "qty": 2 },
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "executiveBed": {
+    "name": "Executive Bed",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "fiberMesh", "qty": 2 },
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "barTable": {
+    "name": "Bar Table",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "coffeeVendingMachine": {
+    "name": "Coffee Vending Machine",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "titanium", "qty": 1 }
+    ]
+  },
+  "trashCan": {
+    "name": "Trash Can",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "titanium", "qty": 1 }
+    ]
+  },
+  "narrowPlanter": {
+    "name": "Narrow Planter",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "wallPlanter": {
+    "name": "Wall Planter",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "titanium", "qty": 1 }
+    ]
+  },
+  "indoorGrowbed": {
+    "name": "Indoor Growbed",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "exteriorGrowbed": {
+    "name": "Exterior Growbed",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "aquariumPlantPot1": {
+    "name": "Plant Pot (Basic)",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "titanium", "qty": 1 }
+    ]
+  },
+  "aquariumPlantPot2": {
+    "name": "Plant Pot (Alternative)",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "titanium", "qty": 1 }
+    ]
+  },
+  "pictureFrame": {
+    "name": "Picture Frame",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "copperWire", "qty": 1 }
+    ]
+  },
+  "observatoryBench": {
+    "name": "Observatory Bench",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "labCounter": {
+    "name": "Lab Counter",
+    "type": "Furniture & Decorative Items",
+    "ingredients": [
+      { "key": "titanium", "qty": 2 }
+    ]
+  },
+  "posterKitty": { "name": "Poster: Keep Calm Kitty", "type": "Furniture & Decorative Items", "ingredients": [] },
+  "posterAurora": { "name": "Poster: Aurora", "type": "Furniture & Decorative Items", "ingredients": [] },
+  "posterNaturalSelection": { "name": "Poster: Natural Selection", "type": "Furniture & Decorative Items", "ingredients": [] },
+  "arcadeGorgetoy": { "name": "Arcade Gorge Toy", "type": "Furniture & Decorative Items", "ingredients": [] },
+  "toyCar": { "name": "Toy Car", "type": "Furniture & Decorative Items", "ingredients": [] },
+  "cuddlefishPoster": { "name": "Poster: Cuddlefish", "type": "Furniture & Decorative Items", "ingredients": [] },
+  "holographicModelAurora": { "name": "Holographic Aurora Model", "type": "Furniture & Decorative Items", "ingredients": [] },
+    "titanium": { "name": "Titanium", "type": "Raw Materials", "ingredients": [] },
+  "metalSalvage": { "name": "Metal Salvage", "type": "Raw Materials", "ingredients": [] },
+  "quartz": { "name": "Quartz", "type": "Raw Materials", "ingredients": [] },
+  "copperOre": { "name": "Copper Ore", "type": "Raw Materials", "ingredients": [] },
+  "crashPowder": { "name": "Crash Powder", "type": "Raw Materials", "ingredients": [] },
+  "acidMushroom": { "name": "Acid Mushroom", "type": "Raw Materials", "ingredients": [] },
+  "creepvineSample": { "name": "Creepvine Sample", "type": "Raw Materials", "ingredients": [] },
+  "creepvineSeedCluster": { "name": "Creepvine Seed Cluster", "type": "Raw Materials", "ingredients": [] },
+  "stalkerTooth": { "name": "Stalker Tooth", "type": "Raw Materials", "ingredients": [] },
+  "saltDeposit": { "name": "Salt Deposit", "type": "Raw Materials", "ingredients": [] },
+  "bloodOil": { "name": "Blood Oil", "type": "Raw Materials", "ingredients": [] },
+  "tableCoralSample": { "name": "Table Coral Sample", "type": "Raw Materials", "ingredients": [] },
+  "magnetite": { "name": "Magnetite", "type": "Raw Materials", "ingredients": [] },
+  "diamond": { "name": "Diamond", "type": "Raw Materials", "ingredients": [] },
+  "gold": { "name": "Gold", "type": "Raw Materials", "ingredients": [] },
+  "silverOre": { "name": "Silver Ore", "type": "Raw Materials", "ingredients": [] },
+  "lead": { "name": "Lead", "type": "Raw Materials", "ingredients": [] },
+  "lithium": { "name": "Lithium", "type": "Raw Materials", "ingredients": [] },
+  "uraniniteCrystal": { "name": "Uraninite Crystal", "type": "Raw Materials", "ingredients": [] },
+  "ionCube": { "name": "Ion Cube", "type": "Raw Materials", "ingredients": [] },
+  "ruby": { "name": "Ruby", "type": "Raw Materials", "ingredients": [] },
+  "nickelOre": { "name": "Nickel Ore", "type": "Raw Materials", "ingredients": [] },
+  "kyanite": { "name": "Kyanite", "type": "Raw Materials", "ingredients": [] }
+}

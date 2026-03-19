@@ -1,0 +1,93 @@
+:root {
+  --bg-color: #1c1c1c;
+  --font-color: #e0e0e0;
+  --font-family: monospace, sans-serif;
+
+  --heading-color: #ffffff;
+
+  --input-padding: 5px;
+  --input-font-size: 16px;
+  --input-width: 100%;
+
+  --card-bg: #2a2a2a;
+  --card-border: #555;
+  --card-radius: 4px;
+  --card-padding: 10px;
+  --card-margin: 12px;
+
+  --ingredient-margin: 4px 0;
+
+  --nest-0: #ffffff;
+  --nest-1: #cccccc;
+  --nest-2: #999999;
+  --nest-3: #666666;
+  --nest-4: #444444;
+  --nest-default: #888888;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: var(--heading-color);
+}
+
+input,
+select {
+  font-size: var(--input-font-size);
+  padding: var(--input-padding);
+  margin: 5px 0;
+  width: var(--input-width);
+}
+
+.ingredients {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+  margin-bottom: var(--card-margin);
+}
+
+.ingredient {
+  margin: var(--ingredient-margin);
+}
+
+.logo-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo-scaler {
+  transform-origin: top center;
+  white-space: pre;
+  font-family: monospace;
+  color: var(--heading-color);
+  display: inline-block;
+  line-height: 1;
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  .logo-scaler {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-scaler {
+    transform: scale(0.55);
+  }
+}
+
+@media (max-width: 400px) {
+  .logo-scaler {
+    transform: scale(0.4);
+  }
+}
