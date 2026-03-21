@@ -1,4 +1,15 @@
-import { describe, test, expect, beforeEach } from 'vitest';
+import { describe, test, expect, beforeEach, vi } from 'vitest';
+
+// Mock persistence so tests don't touch localStorage
+vi.mock('../state/persistence.js', () => ({
+  savePinState: vi.fn(),
+  clearPinState: vi.fn(),
+}));
+
+// Mock appState with a gameId so savePinState calls don't fail
+vi.mock('../state/appState.js', () => ({
+  appState: { gameId: 'test-game' },
+}));
 import {
   pinState,
   isPinned,
@@ -6,6 +17,7 @@ import {
   unpinRecipe,
   unpinAll,
   toggleNode,
+  setMultiplier,
   computeMaterialsSummary
 } from '../state/pinState.js';
 
@@ -159,6 +171,38 @@ describe('toggleNode', () => {
   });
 });
 
+describe('setMultiplier', () => {
+  test('sets multiplier on a pinned recipe', () => {
+    pinRecipe('helmet', 'Helmet', makeNodes());
+    setMultiplier('helmet', 3);
+    expect(pinState.pinnedRecipes.get('helmet').multiplier).toBe(3);
+  });
+
+  test('clamps multiplier to minimum of 1', () => {
+    pinRecipe('helmet', 'Helmet', makeNodes());
+    setMultiplier('helmet', 0);
+    expect(pinState.pinnedRecipes.get('helmet').multiplier).toBe(1);
+    setMultiplier('helmet', -5);
+    expect(pinState.pinnedRecipes.get('helmet').multiplier).toBe(1);
+  });
+
+  test('rounds non-integer values', () => {
+    pinRecipe('helmet', 'Helmet', makeNodes());
+    setMultiplier('helmet', 2.7);
+    expect(pinState.pinnedRecipes.get('helmet').multiplier).toBe(3);
+  });
+
+  test('handles non-numeric input gracefully', () => {
+    pinRecipe('helmet', 'Helmet', makeNodes());
+    setMultiplier('helmet', 'abc');
+    expect(pinState.pinnedRecipes.get('helmet').multiplier).toBe(1);
+  });
+
+  test('does nothing for an unpinned recipe', () => {
+    expect(() => setMultiplier('nothing', 5)).not.toThrow();
+  });
+});
+
 describe('computeMaterialsSummary', () => {
   test('returns base ingredients that are unchecked', () => {
     pinRecipe('helmet', 'Helmet', makeNodes());
@@ -192,6 +236,16 @@ describe('computeMaterialsSummary', () => {
     pinRecipe('helmet2',  'Helmet 2', makeNodes());
     const summary = computeMaterialsSummary(mockData);
     expect(summary.get('plastic').qty).toBe(6); // 3 + 3
+  });
+
+  test('applies multiplier to base ingredient quantities', () => {
+    pinRecipe('helmet', 'Helmet', makeNodes());
+    setMultiplier('helmet', 3);
+    const summary = computeMaterialsSummary(mockData);
+    // plastic qty is 3 * multiplier 3 = 9
+    expect(summary.get('plastic').qty).toBe(9);
+    // metal qty is 2 * multiplier 3 = 6
+    expect(summary.get('metal').qty).toBe(6);
   });
 
   test('returns empty map when nothing is pinned', () => {

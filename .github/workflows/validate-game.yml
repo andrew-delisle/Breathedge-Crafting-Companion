@@ -1,0 +1,90 @@
+name: Validate Game Submission
+
+on:
+  pull_request:
+    paths:
+      - 'src/games/**'
+
+jobs:
+  validate:
+    name: Validate game folder structure
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Detect changed game folders
+        id: detect
+        run: |
+          # Find all game folders touched by this PR (excluding the root games dir itself)
+          CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD \
+            | grep '^src/games/' \
+            | grep -v '^src/games/game\.list\.json' \
+            | sed 's|src/games/||' \
+            | cut -d'/' -f1 \
+            | sort -u)
+
+          if [ -z "$CHANGED" ]; then
+            echo "No game folders changed."
+            echo "games=" >> $GITHUB_OUTPUT
+          else
+            echo "Changed game folders: $CHANGED"
+            # Convert to comma-separated for the next step
+            GAMES=$(echo "$CHANGED" | tr '\n' ',' | sed 's/,$//')
+            echo "games=$GAMES" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Validate game folders
+        id: validate
+        if: steps.detect.outputs.games != ''
+        run: node .github/scripts/validate-games.js "${{ steps.detect.outputs.games }}"
+
+      - name: Post validation result as PR comment
+        uses: actions/github-script@v7
+        if: always() && steps.detect.outputs.games != ''
+        with:
+          script: |
+            const fs = require('fs');
+            let body;
+
+            try {
+              body = fs.readFileSync('/tmp/validation-report.md', 'utf8');
+            } catch {
+              body = '⚠️ Could not read validation report.';
+            }
+
+            // Find existing bot comment and update it, or create a new one
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const botComment = comments.find(c =>
+              c.user.type === 'Bot' &&
+              c.body.includes('<!-- crafting-companion-validation -->')
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner:      context.repo.owner,
+                repo:       context.repo.repo,
+                comment_id: botComment.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner:        context.repo.owner,
+                repo:         context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }

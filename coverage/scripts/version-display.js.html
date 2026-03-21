@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">93.1% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>38/38</span>
+                <span class='fraction'>27/29</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">77.77% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>10/10</span>
+                <span class='fraction'>7/9</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">93.1% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>38/38</span>
+                <span class='fraction'>27/29</span>
             </div>
         
             
@@ -100,52 +100,55 @@
 <a name='L35'></a><a href='#L35'>35</a>
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js"> // /src/scripts/version-display.js
 import { appState } from '../state/appState.js';
+import { logger } from './lib/logger.js';
 &nbsp;
-console.log('[VERSION] Starting version check...');
+logger.log('[VERSION] Starting version check...');
 &nbsp;
 const versionElement = document.getElementById('versionDisplay');
-if (!versionElement) {
-  console.warn('[VERSION] No #versionDisplay found. Skipping.');
-}
+if (!versionElement) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >  logger.warn('[VERSION] No #versionDisplay found. Skipping.');</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 async function loadVersionInfo() {
   try {
@@ -153,17 +156,17 @@ async function loadVersionInfo() {
     if (!res.ok) throw new Error('Version file missing');
 &nbsp;
     const data = await res.json();
-    console.log('[VERSION] Version loaded:', data.version);
+    logger.log('[VERSION] Version loaded:', data.version);
 &nbsp;
     applyVersionToDOM(`v${data.version}`);
   } catch (err) {
-    console.warn('[VERSION] Version load failed, showing fallback changelog link.');
+    logger.warn('[VERSION] Version load failed, showing fallback changelog link.');
     applyVersionToDOM(null);
   }
 }
 &nbsp;
 function applyVersionToDOM(versionText) {
-  if (!versionElement) return;
+  if (!versionElement) <span class="branch-0 cbranch-no" title="branch not covered" >return;</span>
 &nbsp;
   const linkHtml = `&lt;a class="version-link" href="https://github.com/andrew-delisle/Breathedge-Crafting-Companion/blob/master/CHANGELOG.md" target="_blank"&gt;Changelog&lt;/a&gt;`;
 &nbsp;
@@ -171,7 +174,7 @@ function applyVersionToDOM(versionText) {
     ? `&lt;span class="version-text"&gt;${versionText}&lt;/span&gt;&lt;span class="version-separator"&gt;&lt;/span&gt;${linkHtml}`
     : linkHtml;
 &nbsp;
-  console.log('[VERSION] Version display updated:', versionElement.innerHTML);
+  logger.log('[VERSION] Version display updated:', versionElement.innerHTML);
 }
 &nbsp;
 loadVersionInfo();</pre></td></tr></table></pre>
@@ -181,7 +184,7 @@ loadVersionInfo();</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-07-20T16:53:08.547Z
+                at 2026-03-21T13:29:20.079Z
             </div>
         <script src="../prettify.js"></script>
         <script>

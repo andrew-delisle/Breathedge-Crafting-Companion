@@ -5,16 +5,16 @@
  * Structure:
  *   pinnedRecipes: Map<recipeKey, { name, nodes: Map<nodeId, NodeState> }>
  *
- * Each node in the tree gets a unique nodeId (recipeKey + path) so the same
- * ingredient appearing in two branches is tracked independently.
- *
  * NodeState: { checked: boolean, disabled: boolean, isBase: boolean,
  *              qty: number, ingredientKey: string, parentNodeId: string|null,
  *              childNodeIds: string[] }
  */
 
+import { savePinState, clearPinState } from './persistence.js';
+import { appState } from './appState.js';
+
 export const pinState = {
-  pinnedRecipes: new Map(), // recipeKey -> { name, nodes }
+  pinnedRecipes: new Map(),
 };
 
 /**
@@ -26,15 +26,12 @@ export function isPinned(recipeKey) {
 
 /**
  * Pins a recipe. Builds the full node tree from the flattened recipe data.
- * Each node tracks its own state and references to parent/children.
  */
 export function pinRecipe(recipeKey, recipeName, flatNodes) {
   if (isPinned(recipeKey)) return;
 
   const nodes = new Map();
 
-  // flatNodes is the output of flattenRecipeTree:
-  // [{ text, level, ingredientKey, qty, isBase, nodeId, parentNodeId }]
   for (const node of flatNodes) {
     nodes.set(node.nodeId, {
       checked: false,
@@ -56,21 +53,35 @@ export function pinRecipe(recipeKey, recipeName, flatNodes) {
     }
   }
 
-  pinState.pinnedRecipes.set(recipeKey, { name: recipeName, nodes });
+  pinState.pinnedRecipes.set(recipeKey, { name: recipeName, nodes, multiplier: 1 });
+  savePinState(appState.gameId, pinState);
 }
 
 /**
- * Unpins a recipe and clears all its state.
+ * Unpins a recipe and saves updated state.
  */
 export function unpinRecipe(recipeKey) {
   pinState.pinnedRecipes.delete(recipeKey);
+  savePinState(appState.gameId, pinState);
 }
 
 /**
- * Unpins all recipes.
+ * Unpins all recipes and removes persisted state.
  */
 export function unpinAll() {
   pinState.pinnedRecipes.clear();
+  clearPinState(appState.gameId);
+}
+
+/**
+ * Sets the quantity multiplier for a pinned recipe.
+ * Minimum value is 1. Non-integers are rounded.
+ */
+export function setMultiplier(recipeKey, value) {
+  const recipe = pinState.pinnedRecipes.get(recipeKey);
+  if (!recipe) return;
+  recipe.multiplier = Math.max(1, Math.round(Number(value) || 1));
+  savePinState(appState.gameId, pinState);
 }
 
 /**
@@ -87,6 +98,7 @@ export function toggleNode(recipeKey, nodeId) {
 
   node.checked = !node.checked;
   propagateToDescendants(recipe.nodes, nodeId, node.checked);
+  savePinState(appState.gameId, pinState);
 }
 
 /**
@@ -107,25 +119,26 @@ function propagateToDescendants(nodes, nodeId, parentChecked) {
 
 /**
  * Computes the materials summary across all pinned recipes.
- * Only counts base ingredients whose node is not checked and not disabled
- * by a checked ancestor.
+ * Only counts base ingredients that are unchecked and not disabled.
  * Returns Map<ingredientKey, { name, qty }>
  */
 export function computeMaterialsSummary(data) {
   const summary = new Map();
 
   for (const [, recipe] of pinState.pinnedRecipes) {
+    const multiplier = recipe.multiplier || 1;
     for (const [, node] of recipe.nodes) {
       if (!node.isBase) continue;
       if (node.checked || node.disabled) continue;
 
       const key = node.ingredientKey;
       const name = data[key]?.name || node.text.replace(/ x\d+$/, '');
+      const qty = node.qty * multiplier;
       const existing = summary.get(key);
       if (existing) {
-        existing.qty += node.qty;
+        existing.qty += qty;
       } else {
-        summary.set(key, { name, qty: node.qty });
+        summary.set(key, { name, qty });
       }
     }
   }

@@ -162,3 +162,15 @@ footer .version-separator::before { content: " · "; }
 footer .version-link { color: var(--text); text-decoration: none; }
 footer .version-link::after { content: var(--version-icon, ''); margin-left: 4px; }
 
+
+.multiplier-wrapper { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+.multiplier-label { font-size: 12px; user-select: none; }
+.multiplier-input {
+  width: 52px; min-width: 52px; padding: 3px 6px;
+  font-size: 12px; text-align: center;
+  background: var(--bg-input); border: 1px solid var(--border);
+  color: var(--text); border-radius: var(--radius);
+  -moz-appearance: textfield;
+}
+.multiplier-input::-webkit-outer-spin-button,
+.multiplier-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }

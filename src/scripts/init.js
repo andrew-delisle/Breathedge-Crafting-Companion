@@ -4,6 +4,9 @@
     import { setupGameDropdown, wireGameSelectListener, wireRecipeTypeFilter, wireSearchBox } from './lib/ui.js';
 import { populateRecipeTypeFilter, renderList } from './lib/renderList.util.js';
 import { logger } from './lib/logger.js';
+import { loadPinState } from '../state/persistence.js';
+import { pinRecipe, toggleNode, pinState } from '../state/pinState.js';
+import { renderPinned } from './lib/pinnedRecipes.js';
 
     export async function init() {
       logger.log('\n[INIT] Starting initialization...');
@@ -48,6 +51,9 @@ import { logger } from './lib/logger.js';
           logger.log(`[INIT] Loading assets for gameId: ${appState.gameId}`);
           await loadGameAssets(appState.gameId);
           logger.log('[INIT] Finished loading game assets.');
+          loadPinState(appState.gameId, appState.data, pinRecipe, toggleNode, pinState);
+          renderPinned();
+          renderList();
         } else {
           logger.warn('[INIT] No valid gameId, falling back to default assets.');
           await loadDefaultAssets();

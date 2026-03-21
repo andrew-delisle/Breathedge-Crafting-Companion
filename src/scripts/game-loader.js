@@ -178,7 +178,8 @@ export async function loadRecipeTypes(path) {
         appState.config = config;
         appState.data = data;
         appState.recipeTypes = recipeTypes;
-        appState.currentGame = gameId;
+        appState.gameId = gameId;
+        appState.currentGame = gameId; // kept for compatibility
 
         logger.log(
           `[GAME-LOADER] Game assets loaded and applied for: ${gameId}`

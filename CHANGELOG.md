@@ -1,5 +1,27 @@
 # 📜 Changelog
 
+## v3.2.0 – 2026-03-21
+
+### ✨ New Features
+- **localStorage persistence** — pinned recipes, checked ingredients, and quantity multipliers all survive page refreshes
+- **Quantity multiplier** — each pinned recipe has a `×` input in its header; the materials summary scales all counts automatically
+- **Game Config Builder** — browser-based tool at `tools/game-config-builder.html` for creating new game configs with a colour-picker theme generator and zip export
+- **GitHub Actions** — automated PR validation and `game.list.json` regeneration on merge, enabling community game submissions
+- **Contributing guide** — `CONTRIBUTING.md` with full file format reference, naming conventions, and PR process
+
+### 🔧 Code Quality
+- Extracted core logic in GitHub Action scripts into exported functions for unit testing
+- Added 60+ tests for `validate-games.js` and `generate-game-list.js`
+- Vitest `environmentMatchGlobs` added so Node.js scripts run in the correct test environment
+- Fixed Windows compatibility: replaced hardcoded `/tmp/` path with `os.tmpdir()`
+
+### 🐛 Bug Fixes
+- Fixed `appState.gameId` never being set after game load (game-loader was setting `appState.currentGame` instead), which prevented localStorage persistence from saving anything
+- Fixed test failures caused by enriched `flattenRecipeTree` node shape
+- Fixed `version-display.test.js` asserting on `console.warn` instead of `logger.warn`
+
+---
+
 ## v3.1.0 – 2026-03-19
 
 ### ✨ New Features

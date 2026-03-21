@@ -17,9 +17,8 @@ describe('flattenRecipeTree - full coverage', () => {
         ]
       },
       plastic: { name: 'Plastic', type: 2, ingredients: [] },
-      metal: { name: 'Metal', type: 2, ingredients: [] }
+      metal:   { name: 'Metal',   type: 2, ingredients: [] }
     };
-    // Spy on logger.warn directly so tests work regardless of the DEBUG flag
     warnSpy = vi.spyOn(loggerModule.logger, 'warn').mockImplementation(() => {});
   });
 
@@ -43,47 +42,51 @@ describe('flattenRecipeTree - full coverage', () => {
     const result = flattenRecipeTree(mockData, 'nonexistent');
     expect(result).toEqual([]);
   });
-  
-  test('skips circular references gracefully', () => {
-  mockData.circular = {
-    name: 'Circular',
-    type: 1,
-    ingredients: [{ key: 'circular', qty: 1 }]
-  };
-  const result = flattenRecipeTree(mockData, 'circular');
 
-  // ✅ Should include the first-level "Circular" only once
-  expect(result).toEqual([{ text: 'Circular', level: 0 }]);
-  expect(warnSpy).toHaveBeenCalledWith(
-    "[RecipeUtils] Circular reference detected at 'circular', skipping deeper recursion."
-  );
-});
-  
+  test('skips circular references gracefully', () => {
+    mockData.circular = {
+      name: 'Circular',
+      type: 1,
+      ingredients: [{ key: 'circular', qty: 1 }]
+    };
+    const result = flattenRecipeTree(mockData, 'circular');
+    // Node has enriched shape — use objectContaining to check what matters
+    expect(result).toEqual([
+      expect.objectContaining({ text: 'Circular', level: 0 })
+    ]);
+    expect(warnSpy).toHaveBeenCalledWith(
+      "[RecipeUtils] Circular reference detected at 'circular', skipping deeper recursion."
+    );
+  });
+
   test('skips invalid ingredients gracefully', () => {
-  mockData.bad = { name: 'Bad', type: 1, ingredients: null }; // ✅ not an array
-  const result = flattenRecipeTree(mockData, 'bad');
-  expect(result).toEqual([]);
-  expect(warnSpy).toHaveBeenCalledWith(
-    "[RecipeUtils] Missing or invalid 'ingredients' for 'bad'"
-  );
-});
+    mockData.bad = { name: 'Bad', type: 1, ingredients: null };
+    const result = flattenRecipeTree(mockData, 'bad');
+    expect(result).toEqual([]);
+    expect(warnSpy).toHaveBeenCalledWith(
+      "[RecipeUtils] Missing or invalid 'ingredients' for 'bad'"
+    );
+  });
 
   test('handles valid nested ingredients with multiplier', () => {
     mockData.helmet.ingredients = [{ key: 'plastic', qty: 3 }];
     const result = flattenRecipeTree(mockData, 'helmet');
+    // Use objectContaining — node has extra fields beyond text and level
     expect(result).toEqual(
-      expect.arrayContaining([{ text: 'Plastic x3', level: 0 }])
+      expect.arrayContaining([
+        expect.objectContaining({ text: 'Plastic x3', level: 0 })
+      ])
     );
   });
+
   test('handles deep nesting gracefully', () => {
-  mockData.level1 = {
-    name: 'Level1',
-    type: 1,
-    ingredients: [{ key: 'helmet', qty: 1 }]
-  };
-  const result = flattenRecipeTree(mockData, 'level1');
-  const nested = result.find(r => r.text.includes('Plastic'));
-  expect(nested.level).toBe(1); // ✅ Correct level after refactor
-});
-  
+    mockData.level1 = {
+      name: 'Level1',
+      type: 1,
+      ingredients: [{ key: 'helmet', qty: 1 }]
+    };
+    const result = flattenRecipeTree(mockData, 'level1');
+    const nested = result.find(r => r.text.includes('Plastic'));
+    expect(nested.level).toBe(1);
+  });
 });

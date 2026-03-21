@@ -1,0 +1,44 @@
+name: Update Game List
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/games/**'
+
+jobs:
+  update-game-list:
+    name: Regenerate game.list.json
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Use a PAT or the default token — needs write access to push back
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Regenerate game.list.json
+        run: node .github/scripts/generate-game-list.js
+
+      - name: Commit updated game.list.json
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add src/games/game.list.json
+
+          if git diff --cached --quiet; then
+            echo "game.list.json is already up to date — nothing to commit."
+          else
+            git commit -m "chore: regenerate game.list.json [skip ci]"
+            git push
+          fi

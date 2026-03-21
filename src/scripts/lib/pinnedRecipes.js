@@ -1,4 +1,4 @@
-import { pinState, unpinRecipe, unpinAll, toggleNode, computeMaterialsSummary } from '../../state/pinState.js';
+import { pinState, unpinRecipe, unpinAll, toggleNode, computeMaterialsSummary, setMultiplier } from '../../state/pinState.js';
 import { getColorForLevel } from '../utils.js';
 import { appState } from '../../state/appState.js';
 
@@ -99,6 +99,31 @@ function buildPinnedCard(recipeKey, recipe, startExpanded = false) {
   toggleBtn.textContent = '▶ Show';
   toggleBtn.setAttribute('aria-expanded', 'false');
 
+  // Multiplier control
+  const multiplierWrapper = document.createElement('div');
+  multiplierWrapper.classList.add('multiplier-wrapper');
+
+  const multiplierLabel = document.createElement('span');
+  multiplierLabel.classList.add('multiplier-label');
+  multiplierLabel.textContent = '×';
+
+  const multiplierInput = document.createElement('input');
+  multiplierInput.type = 'number';
+  multiplierInput.classList.add('multiplier-input');
+  multiplierInput.min = '1';
+  multiplierInput.step = '1';
+  multiplierInput.value = String(recipe.multiplier || 1);
+  multiplierInput.title = 'Quantity multiplier';
+  multiplierInput.addEventListener('change', () => {
+    setMultiplier(recipeKey, multiplierInput.value);
+    renderPinned();
+  });
+  // Prevent arrow keys from bubbling and triggering other UI
+  multiplierInput.addEventListener('keydown', e => e.stopPropagation());
+
+  multiplierWrapper.appendChild(multiplierLabel);
+  multiplierWrapper.appendChild(multiplierInput);
+
   const removeBtn = document.createElement('button');
   removeBtn.classList.add('btn-remove-pin');
   removeBtn.textContent = '✕ Remove';
@@ -109,6 +134,7 @@ function buildPinnedCard(recipeKey, recipe, startExpanded = false) {
   });
 
   header.appendChild(title);
+  header.appendChild(multiplierWrapper);
   header.appendChild(toggleBtn);
   header.appendChild(removeBtn);
   card.appendChild(header);
