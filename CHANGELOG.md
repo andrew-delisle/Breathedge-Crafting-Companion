@@ -1,5 +1,14 @@
 # 📜 Changelog
 
+## v3.2.1 – 2026-03-21
+
+### 🏷 Rename
+- Project renamed from **Breathedge Crafting Companion** to **Crafting Companion**
+- Updated all internal references, page titles, GitHub links, and README
+- Config builder tool linked via live GitHub Pages URL
+
+---
+
 ## v3.2.0 – 2026-03-21
 
 ### ✨ New Features

@@ -27,7 +27,7 @@ async function loadVersionInfo() {
 function applyVersionToDOM(versionText) {
   if (!versionElement) return;
 
-  const linkHtml = `<a class="version-link" href="https://github.com/andrew-delisle/Breathedge-Crafting-Companion/blob/master/CHANGELOG.md" target="_blank">Changelog</a>`;
+  const linkHtml = `<a class="version-link" href="https://github.com/andrew-delisle/Crafting-Companion/blob/master/CHANGELOG.md" target="_blank">Changelog</a>`;
 
   versionElement.innerHTML = versionText
     ? `<span class="version-text">${versionText}</span><span class="version-separator"></span>${linkHtml}`

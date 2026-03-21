@@ -1,9 +1,9 @@
-# 🚀 Breathedge Crafting Companion
+# 🚀 Crafting Companion
 
-A lightweight, mobile-friendly web app to help you track and explore crafting recipes across multiple survival games — including **Breathedge** and **Subnautica** — with full support for adding your own games.
+A lightweight, mobile-friendly web app to help you track and explore crafting recipes across any survival game. Ships with **Breathedge** and **Subnautica** — and supports adding your own games via a built-in config builder and community contributions.
 
 👉 **Live Site:**  
-[https://andrew-delisle.github.io/Breathedge-Crafting-Companion](https://andrew-delisle.github.io/Breathedge-Crafting-Companion)
+[https://andrew-delisle.github.io/Crafting-Companion](https://andrew-delisle.github.io/Crafting-Companion)
 
 ---
 
@@ -27,7 +27,7 @@ Want to contribute a game or add one for your own use?
 
 ### Quick start — use the Config Builder
 
-Open [`tools/game-config-builder.html`](tools/game-config-builder.html) in your browser. It walks you through defining item types, items, and recipes, then exports a ready-to-use zip you can drop straight into the repo.
+Open the **[Config Builder](https://andrew-delisle.github.io/Crafting-Companion/tools/game-config-builder.html)** in your browser. It walks you through defining item types, items, and recipes, then exports a ready-to-use zip you can drop straight into the repo.
 
 ### Manual setup
 
@@ -86,7 +86,7 @@ npm run coverage  # run tests with coverage report
 ## 🐛 Bugs & 💡 Feature Requests
 
 Have an idea or found a bug?  
-[Open an issue →](https://github.com/andrew-delisle/Breathedge-Crafting-Companion/issues)
+[Open an issue →](https://github.com/andrew-delisle/Crafting-Companion/issues)
 
 ---
 
