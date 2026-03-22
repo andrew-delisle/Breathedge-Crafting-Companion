@@ -558,7 +558,7 @@
   "seamothDepthModuleMK3": { "name": "Seamoth Depth Module MK3", "type": "Vehicle Modules", "ingredients": [
     { "key": "seamothDepthModuleMK2", "qty": 1 },
     { "key": "plasteelIngot", "qty": 1 },
-    { "key": "aluminumOxideCrystal", "qty": 2 }
+    { "key": "ruby", "qty": 3 }
   ] },
   "seamothPerimeterDefenseSystem": { "name": "Seamoth Perimeter Defense System", "type": "Vehicle Modules", "ingredients": [
     { "key": "polyaniline", "qty": 1 },
@@ -799,7 +799,7 @@
     "type": "Base Pieces",
     "ingredients": [
       { "key": "titanium", "qty": 5 },
-      { "key": "aerogel", "qty": 2 },
+      { "key": "aerogel", "qty": 1 },
       { "key": "magnetite", "qty": 2 }
     ]
   },
@@ -1030,7 +1030,7 @@
   "toyCar": { "name": "Toy Car", "type": "Furniture & Decorative Items", "ingredients": [] },
   "cuddlefishPoster": { "name": "Poster: Cuddlefish", "type": "Furniture & Decorative Items", "ingredients": [] },
   "holographicModelAurora": { "name": "Holographic Aurora Model", "type": "Furniture & Decorative Items", "ingredients": [] },
-    "titanium": { "name": "Titanium", "type": "Raw Materials", "ingredients": [] },
+  "titanium": { "name": "Titanium", "type": "Raw Materials", "ingredients": [] },
   "metalSalvage": { "name": "Metal Salvage", "type": "Raw Materials", "ingredients": [] },
   "quartz": { "name": "Quartz", "type": "Raw Materials", "ingredients": [] },
   "copperOre": { "name": "Copper Ore", "type": "Raw Materials", "ingredients": [] },
@@ -1052,5 +1052,16 @@
   "ionCube": { "name": "Ion Cube", "type": "Raw Materials", "ingredients": [] },
   "ruby": { "name": "Ruby", "type": "Raw Materials", "ingredients": [] },
   "nickelOre": { "name": "Nickel Ore", "type": "Raw Materials", "ingredients": [] },
-  "kyanite": { "name": "Kyanite", "type": "Raw Materials", "ingredients": [] }
+  "kyanite": { "name": "Kyanite", "type": "Raw Materials", "ingredients": [] },
+  "caveSulfur": { "name": "Cave Sulfur", "type": "Raw Materials", "ingredients": [] },
+  "bladderfish": { "name": "Bladder Fish", "type": "Raw Materials", "ingredients": [] },
+  "crystallineSulfur": { "name": "Crystalline Sulfur", "type": "Raw Materials", "ingredients": [] },
+  "gelSack": { "name": "Gel Sack", "type": "Raw Materials", "ingredients": [] },
+  "deepShroom": { "name": "Deep Shroom", "type": "Raw Materials", "ingredients": [] },
+  "bulbBushSample": { "name": "Bulb Bush Sample", "type": "Raw Materials", "ingredients": [] },
+  "eyeStalkSeed": { "name": "Eye Stalk Seed", "type": "Raw Materials", "ingredients": [] },
+  "seaCrownSeed": { "name": "Sea Crown Seed", "type": "Raw Materials", "ingredients": [] },
+  "ghostWeedSeed": { "name": "Ghost Weed Seed", "type": "Raw Materials", "ingredients": [] },
+  "fungalSample": { "name": "Fungal Sample", "type": "Raw Materials", "ingredients": [] },
+  "coralTubeSample": { "name": "Coral Tube Sample", "type": "Raw Materials", "ingredients": [] }
 }
